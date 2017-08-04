@@ -1,0 +1,26 @@
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(.9) rotate(10deg);
+  }
+  90% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shrink {
+  0% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

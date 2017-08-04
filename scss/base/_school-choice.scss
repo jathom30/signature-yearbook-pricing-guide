@@ -1,0 +1,26 @@
+.school-choice {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr) 50px;
+//  grid-gap: 100px;
+  height: 50vh;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  .school-step-one {
+//    background: pink;
+    
+  }
+  .school-step-two {
+//    background: orange;
+  }
+  .school-buttons {
+    button {
+      border: none;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+

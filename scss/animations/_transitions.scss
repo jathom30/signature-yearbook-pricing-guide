@@ -1,0 +1,19 @@
+.school-box:hover,
+.signature-box:hover {
+  
+  cursor: pointer;
+  background: $dark-blue;
+  h2 {
+    color: $background;
+  }
+
+  #icons,
+  #icon-shadow {
+    transform-origin: center;
+    animation: grow 300ms ease-in forwards;
+  }
+  #icon-circle {
+    transform-origin: center;
+    animation: shrink 300ms ease-in forwards;
+  }
+}
