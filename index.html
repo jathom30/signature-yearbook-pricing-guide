@@ -8,12 +8,14 @@
 </head>
 
 <body>
-  <div class="main-grid">
-    <div class="cta">
+ 
+  <div class="cta">
       <h1>Signature Studio</h1>
       <h2>Yearbook Pricing</h2>
     </div>
-    
+  
+  <div class="main-grid">
+  
     <div class="school-box">
       <div class="school-button">
         <div class="school-button-icon">
@@ -40,7 +42,7 @@
         <h2>School</h2>
       </div>
     </div>
-    
+  
     <div class="signature-box">
       <div class="signature-button">
         <div class="signature-button-icon">
@@ -77,58 +79,75 @@
         <h2>Signature</h2>
       </div>
     </div>
+
+    <div class="footer">
+    © copyright 2017
+    </div>
+  
   </div>
 
-
   <div class="signature-choice">
-    <div class="step-one">
+    <h1>Signature</h1>
+    
+    <div class="signature-step-one">
+     
       <h3>Step One</h3>
       <p>Quantity of books requested:</p>
-      <span>$</span><input id="quantity-signature" type="number" placeholder="100">
+      <input id="quantity-signature" type="number" placeholder="100">
       <p>Printer's quoted price:</p>
-      <span>$</span><input id="quote-signature" type="number" placeholder="1000">
-      <button type="button">Submit</button>
+      <span>$</span><input id="quote-signature" type="number" placeholder="1000"><!--
+   --><button id="signature-submit" type="button">Submit</button>
+      <p id="signature-minimum">Minimum:</p>
+      <p id="signature-recommended">Recommended:</p>
+      
     </div>
 
-    <div class="step-two">
+    <div class="signature-step-two">
       <h3>Step Two</h3>
-      <p>Minimum:</p>
-      <p>Recommended:</p>
       <p>Set Price Per Book:</p>
-      <span>$</span><input id="price-set" type="number" placeholder="10">
+      <span>$</span><input id="price-set" type="number" placeholder="10"><!--
+   --><button id="signature-price" type="button">Submit</button>
+      <p id="signature-profit">Profit:</p>
     </div>
 
     <div class="signature-buttons">
-      <button id="signature-accept" type="button">Accept</button>
-      <button id="signature-reset" type="button">Reset</button>
+      <button id="signature-accept" type="button">Accept</button><!--
+   --><button id="signature-reset" type="button">Reset</button>
     </div>
+    
+    <button class="return" type="button">Back</button>
+    
   </div>
 
   <div class="school-choice">
+    <h1>School</h1>
     <div class="school-step-one">
       <h3>Step One</h3>
-      <p>Page Count (must be a multiple of four):</p>
-      <input id="page-count" type="number" placeholder="48">
+      <p>Page Count <br>(must be a multiple of four):</p>
+      <input id="page-count" type="number" placeholder="44">
       <p>Quantity requested:</p>
-      <input id="school-quantity" type="number" placeholder="200">
+      <input id="school-quantity" type="number" placeholder="200"><!--
+   --><button id="school-submit" type="button">submit</button>
+      <p id="school-quote-range">Price quote range:</p>
     </div>
     <div class="school-step-two">
       <h3>Step Two</h3>
-      <p>When would you like the books to the school:</p>
-      <input id="date" type="date">
-      <p>Price quote range:</p>
-      <p>Due date:</p>
+      <p>Book's due date to school:</p>
+      <input id="date" type="date"><!--
+   --><button id="school-date-submit" type="button">accept</button>
+      <p id="school-due-date">Due date:</p>
     </div>
     <div class="school-buttons">
-      <button id="school-accept" type="button">Accept</button>
-      <button id="school-reset" type="button">Reset</button>
+      <button id="school-accept" type="button">Accept</button><!--
+   --><button id="school-reset" type="button">Reset</button>
     </div>
+    
+    <button class="return">Back</button>
+    
   </div>
 
 
-  <div class="footer">
-    © copyright 2017
-  </div>
+  
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="scripts.js"></script>

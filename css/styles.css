@@ -396,10 +396,13 @@ template {
 body {
   background: #eaf1f4; }
 
+input:focus, textarea:focus, button:focus {
+  outline: none; }
+
 .main-grid {
-  height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 2fr 2fr;
+  grid-template-rows: 1fr 1fr 50px;
+  height: 75vh;
   align-items: center; }
 
 .cta {
@@ -408,6 +411,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
+  height: 25vh;
   background: url(../img/tattered-edges-of-book-pages.jpg) no-repeat center;
   background-size: cover;
   filter: hue-rotate(180deg) saturate(0.25); }
@@ -462,18 +466,128 @@ body {
   text-align: center;
   padding: 10px 0; }
 
-.school-choice {
+.school-choice,
+.signature-choice {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, 1fr) 50px;
-  height: 50vh;
+  grid-template-rows: 50px repeat(2, 1fr) 100px 100px;
+  grid-gap: 10px;
+  height: 75vh;
   text-align: center;
   justify-content: center;
   align-items: center; }
-  .school-choice .school-buttons button {
+  .school-choice .school-buttons button,
+  .signature-choice .school-buttons button {
     border: none; }
-    .school-choice .school-buttons button:hover {
+    .school-choice .school-buttons button:hover,
+    .signature-choice .school-buttons button:hover {
       cursor: pointer; }
+
+.signature-choice h1,
+.school-choice h1 {
+  width: 250px;
+  margin: auto;
+  border-bottom: 1px solid #070d31; }
+.signature-choice h3,
+.school-choice h3 {
+  text-transform: uppercase; }
+.signature-choice #quantity-signature,
+.signature-choice #page-count,
+.school-choice #quantity-signature,
+.school-choice #page-count {
+  border: 1px solid #373b5d;
+  border-radius: 3px;
+  width: 250px; }
+.signature-choice #quote-signature,
+.signature-choice #price-set,
+.signature-choice #date,
+.signature-choice #school-quantity,
+.school-choice #quote-signature,
+.school-choice #price-set,
+.school-choice #date,
+.school-choice #school-quantity {
+  border: 1px solid #373b5d;
+  border-radius: 3px 0 0 3px;
+  width: 175px; }
+.signature-choice #date,
+.school-choice #date {
+  height: 20px; }
+.signature-choice #signature-submit,
+.signature-choice #signature-price,
+.signature-choice #school-submit,
+.signature-choice #school-date-submit,
+.school-choice #signature-submit,
+.school-choice #signature-price,
+.school-choice #school-submit,
+.school-choice #school-date-submit {
+  border-radius: 0 3px 3px 0;
+  border-left: none;
+  background: #373b5d;
+  color: #eaf1f4; }
+  .signature-choice #signature-submit:hover,
+  .signature-choice #signature-price:hover,
+  .signature-choice #school-submit:hover,
+  .signature-choice #school-date-submit:hover,
+  .school-choice #signature-submit:hover,
+  .school-choice #signature-price:hover,
+  .school-choice #school-submit:hover,
+  .school-choice #school-date-submit:hover {
+    background: white;
+    color: #373b5d; }
+.signature-choice button,
+.school-choice button {
+  background: #373b5d;
+  color: #eaf1f4;
+  border: 1px solid #373b5d;
+  border-radius: 3px;
+  padding: 1px 10px;
+  width: 75px; }
+  .signature-choice button:hover,
+  .school-choice button:hover {
+    background: white;
+    color: #373b5d; }
+.signature-choice .signature-buttons button,
+.signature-choice .school-buttons button,
+.school-choice .signature-buttons button,
+.school-choice .school-buttons button {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #373b5d;
+  border-top: 1px solid #373b5d;
+  width: 125px;
+  background: #373b5d;
+  color: #eaf1f4; }
+  .signature-choice .signature-buttons button:hover,
+  .signature-choice .school-buttons button:hover,
+  .school-choice .signature-buttons button:hover,
+  .school-choice .school-buttons button:hover {
+    background: white;
+    color: #373b5d; }
+.signature-choice .signature-buttons #signature-accept,
+.signature-choice .signature-buttons #school-accept,
+.signature-choice .school-buttons #signature-accept,
+.signature-choice .school-buttons #school-accept,
+.school-choice .signature-buttons #signature-accept,
+.school-choice .signature-buttons #school-accept,
+.school-choice .school-buttons #signature-accept,
+.school-choice .school-buttons #school-accept {
+  border-radius: 3px 0 0 3px;
+  border-left: 1px solid #373b5d; }
+.signature-choice .signature-buttons #signature-reset,
+.signature-choice .signature-buttons #school-reset,
+.signature-choice .school-buttons #signature-reset,
+.signature-choice .school-buttons #school-reset,
+.school-choice .signature-buttons #signature-reset,
+.school-choice .signature-buttons #school-reset,
+.school-choice .school-buttons #signature-reset,
+.school-choice .school-buttons #school-reset {
+  border-radius: 0 3px 3px 0;
+  border-right: 1px solid #373b5d; }
+.signature-choice .return,
+.school-choice .return {
+  width: 250px;
+  margin: auto;
+  background: #373b5d; }
 
 @keyframes grow {
   0% {

@@ -7,15 +7,20 @@ body {
   background: $background;
 }
 
+input:focus, textarea:focus, button:focus {
+    outline: none;
+}
+
 .main-grid {
-  height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 2fr 2fr;
+  grid-template-rows: 1fr 1fr 50px;
+  height: 75vh;
   align-items: center;
 }
 
 .cta {
   @include flex-center;
+  height: 25vh;
   background: url(../img/tattered-edges-of-book-pages.jpg) no-repeat center;
   background-size: cover;
   filter: hue-rotate(180deg) saturate(.25);

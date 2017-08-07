@@ -5,3 +5,10 @@
   justify-content: center;
   height: 100%;
 }
+
+@mixin side-by-side {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid $dark-blue;
+  border-top: 1px solid $dark-blue;
+}

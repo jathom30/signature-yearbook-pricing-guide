@@ -1,17 +1,21 @@
-.school-choice {
+.school-choice, 
+.signature-choice {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, 1fr) 50px;
-//  grid-gap: 100px;
-  height: 50vh;
+  grid-template-rows: 50px repeat(2, 1fr) 100px 100px;
+  grid-gap: 10px;
+  height: 75vh;
   text-align: center;
   justify-content: center;
   align-items: center;
-  .school-step-one {
+  
+  .school-step-one,
+  .signature-step-one {
 //    background: pink;
     
   }
-  .school-step-two {
+  .school-step-two,
+  signature-step-two {
 //    background: orange;
   }
   .school-buttons {

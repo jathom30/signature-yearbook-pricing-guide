@@ -1,0 +1,95 @@
+.signature-choice,
+.school-choice {
+  h1 {
+    width: 250px;
+    margin: auto;
+//    padding: 20px 0 10px;
+    border-bottom: 1px solid $text-color;
+  }
+  
+  h3 {
+      text-transform: uppercase;
+    }
+  
+  #quantity-signature,
+  #page-count {
+    border: 1px solid $dark-blue;
+    border-radius: 3px;
+    width: 250px;
+  }
+  
+  #quote-signature,
+  #price-set,
+  #date,
+  #school-quantity {
+    border: 1px solid $dark-blue;
+//    border-right: none;
+    border-radius: 3px 0 0 3px;
+    width: 175px;
+  }
+  
+  #date {
+    height: 20px;
+  }
+  
+  #signature-submit,
+  #signature-price,
+  #school-submit,
+  #school-date-submit{
+    border-radius: 0 3px 3px 0;
+    border-left: none;
+    background: $dark-blue;
+    color: $background;
+    &:hover {
+      background: white;
+      color: $dark-blue;
+    }
+  }
+  
+  button {
+    background: $dark-blue;
+    color: $background;
+    border: 1px solid $dark-blue;
+    border-radius: 3px;
+    padding: 1px 10px;
+    width: 75px;
+    &:hover {
+      background: white;
+      color: $dark-blue;
+    }
+  }
+  
+  .signature-buttons,
+  .school-buttons {
+    button {
+      @include side-by-side;
+      width: 125px;
+      background: $dark-blue;
+      color: $background;
+      &:hover {
+        background: white;
+        color: $dark-blue;
+      }
+    }
+    
+    #signature-accept,
+    #school-accept {
+      border-radius: 3px 0 0 3px;
+      border-left: 1px solid $dark-blue;
+    }
+    
+    #signature-reset,
+    #school-reset {
+      border-radius: 0 3px 3px 0;
+      border-right: 1px solid $dark-blue;
+    }
+    
+  }
+  
+  .return {
+    width: 250px;
+    margin: auto;
+    background: $dark-blue;
+  }
+  
+}
