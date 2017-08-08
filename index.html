@@ -130,15 +130,44 @@
       <input id="school-quantity" type="number" placeholder="200"><!--
    --><button id="school-submit" type="button">submit</button>
       <div id="school-quote-range">
-        <p>Price quote range:</p>
+        <p>Price quote range (per book):</p>
       </div>
     </div>
     
     <div class="school-step-two">
       <h3>Step Two</h3>
       <p>Book's due date to school:</p>
-      <input id="date" type="date"><!--
-   --><button id="school-date-submit" type="button">accept</button>
+      
+      <div class="school-date-choice">
+        <label>Month:</label>
+        <select id="month" name="month">
+          <option>January</option>
+          <option>February</option>
+          <option>March</option>
+          <option>April</option>
+          <option>May</option>
+          <option>June</option>
+          <option>July</option>
+          <option>August</option>
+          <option>September</option>
+          <option>October</option>
+          <option>November</option>
+          <option>December</option>
+        </select>
+        
+        <label>Day:</label>
+        <select id="day" name="day"></select>
+        
+        <label>Year:</label>
+        <select id="year" name="year">
+          <option>2017</option>
+          <option>2018</option>
+          <option>2019</option>
+          <option>2020</option>
+        </select>
+      </div>
+      
+      <button id="school-date-submit" type="button">accept</button>
       <p id="school-due-date">Due date:</p>
     </div>
     

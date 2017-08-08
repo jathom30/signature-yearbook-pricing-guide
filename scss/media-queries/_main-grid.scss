@@ -1,0 +1,55 @@
+@media (min-width:750px) {
+  .main-grid {
+//    background: pink;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 50px;
+    
+    .school-box,
+    .signature-box {
+      grid-row: span 2;
+    }
+
+    .footer {
+      grid-column: span 2;
+    }
+  }
+  
+  .school-choice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px repeat(2, 1fr) repeat(2, 100px);
+    grid-gap: 10px;
+    height: 100%;
+    
+    .school-step-one,
+    .school-buttons {
+      grid-row: span 2;
+    }
+    
+  }
+  
+  h1 {
+    grid-column: span 2;
+  }
+  
+  .return {
+    grid-column: span 2;
+  }
+  
+  .signature-choice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px repeat(2, 1fr) 100px;
+    grid-gap: 10px;
+    height: 100%;
+    
+    .signature-step-one {
+      grid-row: span 3;
+      align-self: start;
+    }
+    
+  }
+  
+  
+  
+}

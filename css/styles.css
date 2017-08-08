@@ -476,6 +476,11 @@ input:focus, textarea:focus, button:focus {
   text-align: center;
   justify-content: center;
   align-items: center; }
+  .school-choice .school-step-one,
+  .school-choice .signature-step-one,
+  .signature-choice .school-step-one,
+  .signature-choice .signature-step-one {
+    align-self: start; }
   .school-choice .school-buttons button,
   .signature-choice .school-buttons button {
     border: none; }
@@ -515,25 +520,21 @@ input:focus, textarea:focus, button:focus {
 .signature-choice #signature-submit,
 .signature-choice #signature-price,
 .signature-choice #school-submit,
-.signature-choice #school-date-submit,
 .school-choice #signature-submit,
 .school-choice #signature-price,
-.school-choice #school-submit,
-.school-choice #school-date-submit {
+.school-choice #school-submit {
   border-radius: 0 3px 3px 0;
   border-left: none;
-  background: #373b5d;
-  color: #eaf1f4; }
+  background: white;
+  color: #373b5d; }
   .signature-choice #signature-submit:hover,
   .signature-choice #signature-price:hover,
   .signature-choice #school-submit:hover,
-  .signature-choice #school-date-submit:hover,
   .school-choice #signature-submit:hover,
   .school-choice #signature-price:hover,
-  .school-choice #school-submit:hover,
-  .school-choice #school-date-submit:hover {
-    background: white;
-    color: #373b5d; }
+  .school-choice #school-submit:hover {
+    background: #22887f;
+    color: #eaf1f4; }
 .signature-choice button,
 .school-choice button {
   background: #373b5d;
@@ -544,8 +545,13 @@ input:focus, textarea:focus, button:focus {
   width: 75px; }
   .signature-choice button:hover,
   .school-choice button:hover {
-    background: white;
-    color: #373b5d; }
+    background: #22887f;
+    color: #eaf1f4; }
+.signature-choice #school-date-submit,
+.school-choice #school-date-submit {
+  border-radius: 3px;
+  margin-top: 10px;
+  width: 250px; }
 .signature-choice .signature-buttons button,
 .signature-choice .school-buttons button,
 .school-choice .signature-buttons button,
@@ -555,6 +561,7 @@ input:focus, textarea:focus, button:focus {
   border-bottom: 1px solid #373b5d;
   border-top: 1px solid #373b5d;
   width: 125px;
+  height: 30px;
   background: #373b5d;
   color: #eaf1f4; }
   .signature-choice .signature-buttons button:hover,
@@ -573,6 +580,16 @@ input:focus, textarea:focus, button:focus {
 .school-choice .school-buttons #school-accept {
   border-radius: 3px 0 0 3px;
   border-left: 1px solid #373b5d; }
+  .signature-choice .signature-buttons #signature-accept:hover,
+  .signature-choice .signature-buttons #school-accept:hover,
+  .signature-choice .school-buttons #signature-accept:hover,
+  .signature-choice .school-buttons #school-accept:hover,
+  .school-choice .signature-buttons #signature-accept:hover,
+  .school-choice .signature-buttons #school-accept:hover,
+  .school-choice .school-buttons #signature-accept:hover,
+  .school-choice .school-buttons #school-accept:hover {
+    background: #22887f;
+    color: #eaf1f4; }
 .signature-choice .signature-buttons #signature-reset,
 .signature-choice .signature-buttons #school-reset,
 .signature-choice .school-buttons #signature-reset,
@@ -583,11 +600,24 @@ input:focus, textarea:focus, button:focus {
 .school-choice .school-buttons #school-reset {
   border-radius: 0 3px 3px 0;
   border-right: 1px solid #373b5d; }
+  .signature-choice .signature-buttons #signature-reset:hover,
+  .signature-choice .signature-buttons #school-reset:hover,
+  .signature-choice .school-buttons #signature-reset:hover,
+  .signature-choice .school-buttons #school-reset:hover,
+  .school-choice .signature-buttons #signature-reset:hover,
+  .school-choice .signature-buttons #school-reset:hover,
+  .school-choice .school-buttons #signature-reset:hover,
+  .school-choice .school-buttons #school-reset:hover {
+    background: #984047;
+    color: #eaf1f4; }
 .signature-choice .return,
 .school-choice .return {
   width: 250px;
-  margin: auto;
-  background: #373b5d; }
+  margin: auto; }
+  .signature-choice .return:hover,
+  .school-choice .return:hover {
+    background: #eaf1f4;
+    color: #373b5d; }
 
 .password {
   position: fixed;
@@ -666,5 +696,41 @@ input:focus, textarea:focus, button:focus {
   .signature-box:hover #icon-circle {
     transform-origin: center;
     animation: shrink 300ms ease-in forwards; }
+
+@media (min-width: 750px) {
+  .main-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 50px; }
+    .main-grid .school-box,
+    .main-grid .signature-box {
+      grid-row: span 2; }
+    .main-grid .footer {
+      grid-column: span 2; }
+
+  .school-choice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px repeat(2, 1fr) repeat(2, 100px);
+    grid-gap: 10px;
+    height: 100%; }
+    .school-choice .school-step-one,
+    .school-choice .school-buttons {
+      grid-row: span 2; }
+
+  h1 {
+    grid-column: span 2; }
+
+  .return {
+    grid-column: span 2; }
+
+  .signature-choice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px repeat(2, 1fr) 100px;
+    grid-gap: 10px;
+    height: 100%; }
+    .signature-choice .signature-step-one {
+      grid-row: span 3;
+      align-self: start; } }
 
 /*# sourceMappingURL=styles.css.map */
