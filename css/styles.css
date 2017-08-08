@@ -589,6 +589,50 @@ input:focus, textarea:focus, button:focus {
   margin: auto;
   background: #373b5d; }
 
+.password {
+  position: fixed;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 275px;
+  padding: 5px;
+  padding-bottom: 10px;
+  text-align: center;
+  background: #eaf1f4;
+  border-radius: 3px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  border: 3px solid #373b5d;
+  z-index: 1; }
+  .password h2 {
+    color: #070d31; }
+  .password #password {
+    border: 1px solid #373b5d;
+    border-radius: 3px 0 0 3px;
+    width: 175px;
+    height: 21px; }
+  .password button {
+    border-radius: 0 3px 3px 0;
+    border-left: none;
+    border: 1px solid #373b5d;
+    background: #373b5d;
+    color: #eaf1f4;
+    width: 75px; }
+    .password button:hover {
+      background: white;
+      color: #373b5d; }
+  .password .exit-modal {
+    color: #070d31;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 2px 5px;
+    margin: 5px;
+    border: 1px solid rgba(55, 59, 93, 0.2);
+    cursor: pointer; }
+    .password .exit-modal:hover {
+      background: #373b5d;
+      color: #eaf1f4; }
+
 @keyframes grow {
   0% {
     transform: scale(1); }

@@ -4,15 +4,25 @@ const $schoolChoice = $('.school-choice');
 const $banner = $('.cta');
 const $signatureButton = $('.signature-box');
 const $schoolButton = $('.school-box');
+const correctPassword = 'signature';
+
+const $password = $('#password');
+var $passwordDiv = $('.password');
+const $signaturePasswordButton = $('#signature-password-button');
 
 //functions
-
+//reset modal message
+function modalMessageReset() {
+  $passwordDiv.children('h2').text('Please, enter your password:');
+  $password.val('');
+}
 
 
 
 //DOM setup
 $signatureChoice.hide();
 $schoolChoice.hide();
+$passwordDiv.hide();
 
 
 //show school section when button is clicked
@@ -26,13 +36,36 @@ $('.return').click(function() {
   $schoolChoice.hide();
   $signatureChoice.hide();
   $('.main-grid').show();
+  modalMessageReset();
 });
 
-//show signature section when button is clicked
+/********show signature section when button is clicked********/
+//show modal box
 $signatureButton.click(function() {
-  $signatureChoice.show();
-  $('.main-grid').hide();
+  $passwordDiv.show();
 });
+
+//After correct password, show signature section
+$signaturePasswordButton.click(function() {
+  if ($password.val() == correctPassword) {
+    $passwordDiv.hide();
+    $('.main-grid').hide();
+    $signatureChoice.show();
+    console.log($passwordDiv.children('h2').text());
+  }
+  else {
+    $passwordDiv.children('h2').text('Incorrect, please try again:');
+    $password.val('');
+  }
+});
+
+//hide modal if 'x' is clicked
+$('.exit-modal').click(function() {
+  $passwordDiv.hide();
+  modalMessageReset();
+});
+
+
 
 
 /*----Signature Choice----*/
@@ -74,17 +107,32 @@ $('#signature-reset').click(function() {
 /*----School Choice----*/
 var $pageCount = $('#page-count'),
     $schoolQuantity = $('#school-quantity'),
+    $schoolSubmit = $('#school-submit'),
     $schoolDateInput = $('#date'),
     $schoolQuote = $('#school-quote-range'),
     $schoolDueDate = $('#school-due-date'),
-    $schoolSubmit = $('#school-submit');
+    $schoolDateSubmit = $('#school-date-submit'),
+    pageAverageCost = 0.208058822510823,
+    pageMinCost = 0.1195,
+    pageMaxCost = 0.3775;
 
 //step one
-
+$schoolSubmit.click(function() {
+  if (!($pageCount.val() % 4 == 0)) {
+    alert('page count must be a multiple of four');
+  }
+  else {
+    var schoolAverage = parseFloat($pageCount.val()) * parseFloat($schoolQuantity.val()) *     pageAverageCost,
+        schoolMin = parseFloat($pageCount.val()) * parseFloat($schoolQuantity.val()) * pageMinCost,
+        schoolMax = parseFloat($pageCount.val()) * parseFloat($schoolQuantity.val()) * pageMaxCost;
+    
+    $schoolQuote.html('<p>Price quote range:</p>' + '<p>' + 'Min: $' + parseInt(schoolMin) + '</p>' + '<p>' + 'Max: $' + parseInt(schoolMax) + '</p>' + '<p>' + 'Average: $' + parseInt(schoolAverage));
+  }
+});
 
 
 //step two
-
+$('.school-step-two').hide();
 
 
 
@@ -93,7 +141,7 @@ $('#school-reset').click(function() {
   $pageCount.val('');
   $schoolQuantity.val('');
   $schoolDateInput.val('');
-  $schoolQuote.text('Price quote range:');
+  $schoolQuote.html('<p>Price quote range:</p>');
   $schoolDueDate.text('Due date:');
 });
 

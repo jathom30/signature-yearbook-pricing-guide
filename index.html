@@ -121,6 +121,7 @@
 
   <div class="school-choice">
     <h1>School</h1>
+    
     <div class="school-step-one">
       <h3>Step One</h3>
       <p>Page Count <br>(must be a multiple of four):</p>
@@ -128,8 +129,11 @@
       <p>Quantity requested:</p>
       <input id="school-quantity" type="number" placeholder="200"><!--
    --><button id="school-submit" type="button">submit</button>
-      <p id="school-quote-range">Price quote range:</p>
+      <div id="school-quote-range">
+        <p>Price quote range:</p>
+      </div>
     </div>
+    
     <div class="school-step-two">
       <h3>Step Two</h3>
       <p>Book's due date to school:</p>
@@ -137,6 +141,7 @@
    --><button id="school-date-submit" type="button">accept</button>
       <p id="school-due-date">Due date:</p>
     </div>
+    
     <div class="school-buttons">
       <button id="school-accept" type="button">Accept</button><!--
    --><button id="school-reset" type="button">Reset</button>
@@ -145,9 +150,13 @@
     <button class="return">Back</button>
     
   </div>
-
-
   
+  <div class="password">
+    <h2>Please, enter your password:</h2>
+    <input id="password" type="password" placeholder="password"><!--
+ --><button id="signature-password-button" type="button">Submit</button>
+    <div class="exit-modal">X</div>
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="scripts.js"></script>
