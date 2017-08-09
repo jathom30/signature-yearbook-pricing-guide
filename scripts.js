@@ -5,6 +5,7 @@ const $banner = $('.cta');
 const $signatureButton = $('.signature-box');
 const $schoolButton = $('.school-box');
 const correctPassword = 'signature';
+const $overlay = $('.overlay');
 
 const $password = $('#password');
 var $passwordDiv = $('.password');
@@ -22,7 +23,7 @@ function modalMessageReset() {
 //DOM setup
 $signatureChoice.hide();
 $schoolChoice.hide();
-$passwordDiv.hide();
+$overlay.hide();
 
 
 //show school section when button is clicked
@@ -42,16 +43,17 @@ $('.return').click(function() {
 /********show signature section when button is clicked********/
 //show modal box
 $signatureButton.click(function() {
-  $passwordDiv.show();
+  $overlay.show();
+  $passwordDiv.addClass('is-active');
 });
 
 //After correct password, show signature section
 $signaturePasswordButton.click(function() {
   if ($password.val() == correctPassword) {
-    $passwordDiv.hide();
+    $passwordDiv.removeClass('is-active');
     $('.main-grid').hide();
     $signatureChoice.show();
-    console.log($passwordDiv.children('h2').text());
+    $overlay.hide()
   }
   else {
     $passwordDiv.children('h2').text('Incorrect, please try again:');
@@ -61,10 +63,15 @@ $signaturePasswordButton.click(function() {
 
 //hide modal if 'x' is clicked
 $('.exit-modal').click(function() {
-  $passwordDiv.hide();
+  $passwordDiv.removeClass('is-active');
   modalMessageReset();
+  $overlay.hide();
 });
 
+$overlay.click(function() {
+  $overlay.hide();
+  $passwordDiv.removeClass('is-active');
+});
 
 
 
@@ -126,7 +133,7 @@ $schoolSubmit.click(function() {
         schoolMin = (parseFloat($pageCount.val()) * parseFloat($schoolQuantity.val()) * pageMinCost + 1000) / parseFloat($schoolQuantity.val()),
         schoolMax = (parseFloat($pageCount.val()) * parseFloat($schoolQuantity.val()) * pageMaxCost + 1000) / parseFloat($schoolQuantity.val());
     
-    $schoolQuote.html('<p>Price quote range:</p>' + '<p>' + 'Min: $' + parseInt(schoolMin) + '</p>' + '<p>' + 'Max: $' + parseInt(schoolMax) + '</p>' + '<p>' + 'Average: $' + parseInt(schoolAverage));
+    $schoolQuote.html('<p>Price quote range (per book):</p>' + '<p>' + 'Min: $' + parseInt(schoolMin) + '</p>' + '<p>' + 'Max: $' + parseInt(schoolMax) + '</p>' + '<p>' + 'Average: $' + parseInt(schoolAverage));
   }
 });
 
@@ -345,7 +352,7 @@ $('#school-reset').click(function() {
   $pageCount.val('');
   $schoolQuantity.val('');
   $schoolDateInput.val('');
-  $schoolQuote.html('<p>Price quote range:</p>');
+  $schoolQuote.html('<p>Price quote range (per book):</p>');
   $schoolDueDate.text('Due date:');
 });
 

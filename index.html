@@ -9,9 +9,41 @@
 
 <body>
  
-  <div class="cta">
-      <h1>Signature Studio</h1>
-      <h2>Yearbook Pricing</h2>
+  <div class="max-width">
+      <div class="cta">
+        <div class="book">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="720px"
+           height="720px" viewBox="0 0 720 720" enable-background="new 0 0 720 720" xml:space="preserve">
+        <g id="car" display="none">
+        </g>
+        <g id="background">
+          <path id="icon-circle" fill="#5b5d8e" d="M691.45,356.999c0,1.86-0.021,3.71-0.05,5.56c-2.971,180.53-150.23,325.94-331.45,325.94
+            c-13.86,0-27.51-0.85-40.92-2.5c-163.78-20.16-290.58-159.77-290.58-329c0-183.08,148.41-331.5,331.5-331.5
+            C543.03,25.499,691.45,173.919,691.45,356.999z"/>
+          <path id="icon-shadow" fill="#373b5d" d="M691.4,362.559c-2.971,180.53-150.23,325.94-331.45,325.94c-13.86,0-27.51-0.85-40.92-2.5l-163.84-163.84
+            l10.96-10.96l-6.15-0.66l2.03-278.77l76.36,76.359l119.18-86.5l98.59,98.59l96.45-96.449L691.4,362.559z"/>
+        </g>
+        <g id="Layer_4" display="none">
+        </g>
+        <g id="icons">
+          <g>
+            <path fill="#eaf1f4" d="M557.881,231.705v271.56c-26.374-26.373-167.293-30.633-197.926,0l0-0.004v0.004
+              c-30.633-30.633-171.552-26.373-197.926,0V231.767c-2.55,1.747-4.852,3.606-6.838,5.593v284.797
+              c27.291-27.29,173.111-31.697,204.81,0c31.698-31.697,177.519-27.29,204.81,0V237.359
+              C562.8,235.349,560.469,233.471,557.881,231.705z"/>
+            <g>
+              <path fill="#eaf1f4" d="M167.297,223.772v267.901c25.047-25.047,156.211-29.598,190.275-2.111V221.625
+                C323.373,193.166,200.625,190.446,167.297,223.772z"/>
+              <path fill="#eaf1f4" d="M362.428,221.551V489.49c34.204-27.405,165.162-22.842,190.187,2.184V223.772
+                C519.316,190.475,396.753,193.162,362.428,221.551z"/>
+            </g>
+          </g>
+        </g>
+        </svg>
+        </div>
+        <h1>Signature Studio</h1>
+        <h2>Yearbook Pricing</h2>
+      </div>
     </div>
   
   <div class="main-grid">
@@ -128,7 +160,7 @@
       <input id="page-count" type="number" placeholder="44">
       <p>Quantity requested:</p>
       <input id="school-quantity" type="number" placeholder="200"><!--
-   --><button id="school-submit" type="button">submit</button>
+   --><button id="school-submit" type="button">Submit</button>
       <div id="school-quote-range">
         <p>Price quote range (per book):</p>
       </div>
@@ -167,7 +199,7 @@
         </select>
       </div>
       
-      <button id="school-date-submit" type="button">accept</button>
+      <button id="school-date-submit" type="button">Submit</button>
       <p id="school-due-date">Due date:</p>
     </div>
     
@@ -180,12 +212,16 @@
     
   </div>
   
+  
+  <div class="overlay"></div>
+   
   <div class="password">
     <h2>Please, enter your password:</h2>
     <input id="password" type="password" placeholder="password"><!--
- --><button id="signature-password-button" type="button">Submit</button>
+   --><button id="signature-password-button" type="button">Submit</button>
     <div class="exit-modal">X</div>
   </div>
+  
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="scripts.js"></script>

@@ -394,7 +394,7 @@ template {
   font-family: 'Merriweather', serif; }
 
 body {
-  background: #eaf1f4; }
+  background: #373b5d; }
 
 input:focus, textarea:focus, button:focus {
   outline: none; }
@@ -403,29 +403,67 @@ input:focus, textarea:focus, button:focus {
   display: grid;
   grid-template-rows: 1fr 1fr 50px;
   height: 75vh;
-  align-items: center; }
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+  background: #f3f7f8; }
+
+.max-width {
+  background: url(../img/tattered-edges-of-book-pages.jpg) no-repeat center;
+  background-size: cover;
+  max-width: 1000px;
+  margin: auto; }
 
 .cta {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-content: center;
   justify-content: center;
-  height: 100%;
   height: 25vh;
-  background: url(../img/tattered-edges-of-book-pages.jpg) no-repeat center;
-  background-size: cover;
-  filter: hue-rotate(180deg) saturate(0.25); }
+  max-width: 1000px;
+  margin: auto; }
+  .cta .book {
+    display: none;
+    height: 150px;
+    width: 150px;
+    margin: auto;
+    align-self: center;
+    padding: 5px; }
+    .cta .book svg {
+      height: 100%;
+      width: 100%; }
   .cta h1 {
-    color: #eaf1f4;
-    text-shadow: 0 5px 5px #0d0a38;
+    color: #f3f7f8;
+    text-shadow: 0 5px 5px black;
     text-align: center;
-    margin: 0;
-    text-transform: uppercase; }
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-size: 2em;
+    align-self: end; }
+    @media (min-width: 750px) {
+      .cta h1 {
+        font-size: 3em; } }
   .cta h2 {
-    color: #eaf1f4;
-    text-shadow: 0 5px 5px #0d0a38;
+    color: #f3f7f8;
+    text-shadow: 0 5px 5px black;
     text-align: center;
-    margin: 0; }
+    align-self: start;
+    margin: 0 auto; }
+    @media (min-width: 750px) {
+      .cta h2 {
+        font-size: 2em; } }
+  @media (min-width: 750px) {
+    .cta {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(2, 1fr); }
+      .cta .book {
+        display: block;
+        grid-row: span 4; }
+      .cta h1, .cta h2 {
+        grid-column: 2 / 6;
+        text-align: right;
+        padding-right: 1rem; } }
 
 .school-box,
 .signature-box {
@@ -475,7 +513,10 @@ input:focus, textarea:focus, button:focus {
   height: 75vh;
   text-align: center;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  background: #f3f7f8;
+  max-width: 1000px;
+  margin: auto; }
   .school-choice .school-step-one,
   .school-choice .signature-step-one,
   .signature-choice .school-step-one,
@@ -534,11 +575,11 @@ input:focus, textarea:focus, button:focus {
   .school-choice #signature-price:hover,
   .school-choice #school-submit:hover {
     background: #22887f;
-    color: #eaf1f4; }
+    color: #f3f7f8; }
 .signature-choice button,
 .school-choice button {
   background: #373b5d;
-  color: #eaf1f4;
+  color: #f3f7f8;
   border: 1px solid #373b5d;
   border-radius: 3px;
   padding: 1px 10px;
@@ -546,12 +587,18 @@ input:focus, textarea:focus, button:focus {
   .signature-choice button:hover,
   .school-choice button:hover {
     background: #22887f;
-    color: #eaf1f4; }
+    color: #f3f7f8; }
 .signature-choice #school-date-submit,
 .school-choice #school-date-submit {
   border-radius: 3px;
   margin-top: 10px;
-  width: 250px; }
+  width: 250px;
+  background: white;
+  color: #373b5d; }
+  .signature-choice #school-date-submit:hover,
+  .school-choice #school-date-submit:hover {
+    background: #22887f;
+    color: #f3f7f8; }
 .signature-choice .signature-buttons button,
 .signature-choice .school-buttons button,
 .school-choice .signature-buttons button,
@@ -563,7 +610,7 @@ input:focus, textarea:focus, button:focus {
   width: 125px;
   height: 30px;
   background: #373b5d;
-  color: #eaf1f4; }
+  color: #f3f7f8; }
   .signature-choice .signature-buttons button:hover,
   .signature-choice .school-buttons button:hover,
   .school-choice .signature-buttons button:hover,
@@ -589,7 +636,7 @@ input:focus, textarea:focus, button:focus {
   .school-choice .school-buttons #signature-accept:hover,
   .school-choice .school-buttons #school-accept:hover {
     background: #22887f;
-    color: #eaf1f4; }
+    color: #f3f7f8; }
 .signature-choice .signature-buttons #signature-reset,
 .signature-choice .signature-buttons #school-reset,
 .signature-choice .school-buttons #signature-reset,
@@ -609,30 +656,50 @@ input:focus, textarea:focus, button:focus {
   .school-choice .school-buttons #signature-reset:hover,
   .school-choice .school-buttons #school-reset:hover {
     background: #984047;
-    color: #eaf1f4; }
+    color: #f3f7f8; }
 .signature-choice .return,
 .school-choice .return {
   width: 250px;
   margin: auto; }
   .signature-choice .return:hover,
   .school-choice .return:hover {
-    background: #eaf1f4;
-    color: #373b5d; }
+    background: white;
+    color: #373b5d;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2); }
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(3px) grayscale(1);
+  backdrop-filter: blur(3px) grayscale(1); }
 
 .password {
+  opacity: 0;
+  pointer-events: none;
   position: fixed;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 275px;
+  top: calc(75% - 75px);
+  left: calc(50% - 138px);
+  width: 276px;
+  height: 150px;
   padding: 5px;
   padding-bottom: 10px;
   text-align: center;
-  background: #eaf1f4;
+  background: #f3f7f8;
   border-radius: 3px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   border: 3px solid #373b5d;
   z-index: 1; }
+  .password.is-active {
+    opacity: 1;
+    pointer-events: all;
+    animation: modal 500ms ease-in-out forwards; }
+  @media (min-width: 750px) {
+    .password {
+      top: calc(50% - 75px); } }
   .password h2 {
     color: #070d31; }
   .password #password {
@@ -645,23 +712,24 @@ input:focus, textarea:focus, button:focus {
     border-left: none;
     border: 1px solid #373b5d;
     background: #373b5d;
-    color: #eaf1f4;
+    color: #f3f7f8;
     width: 75px; }
     .password button:hover {
       background: white;
       color: #373b5d; }
-  .password .exit-modal {
-    color: #070d31;
-    position: fixed;
-    top: 0;
-    right: 0;
-    padding: 2px 5px;
-    margin: 5px;
-    border: 1px solid rgba(55, 59, 93, 0.2);
-    cursor: pointer; }
-    .password .exit-modal:hover {
-      background: #373b5d;
-      color: #eaf1f4; }
+
+.exit-modal {
+  color: #070d31;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 2px 5px;
+  margin: 5px;
+  border: 1px solid rgba(55, 59, 93, 0.2);
+  cursor: pointer; }
+  .exit-modal:hover {
+    background: #373b5d;
+    color: #f3f7f8; }
 
 @keyframes grow {
   0% {
@@ -679,23 +747,35 @@ input:focus, textarea:focus, button:focus {
     transform: scale(0.9); }
   100% {
     transform: scale(1); } }
+@keyframes modal {
+  0% {
+    opacity: 0;
+    transform: scale(0.1); }
+  25% {
+    transform: rotateX(90deg); }
+  50% {
+    opacity: 1; }
+  85% {
+    transform: scale(1.25); }
+  100% {
+    transform: scale(1); } }
 .school-box:hover,
 .signature-box:hover {
   cursor: pointer;
   background: #373b5d; }
   .school-box:hover h2,
   .signature-box:hover h2 {
-    color: #eaf1f4; }
+    color: #f3f7f8; }
   .school-box:hover #icons,
   .school-box:hover #icon-shadow,
   .signature-box:hover #icons,
   .signature-box:hover #icon-shadow {
     transform-origin: center;
-    animation: grow 300ms ease-in forwards; }
+    animation: grow 200ms ease-in forwards; }
   .school-box:hover #icon-circle,
   .signature-box:hover #icon-circle {
     transform-origin: center;
-    animation: shrink 300ms ease-in forwards; }
+    animation: shrink 200ms ease-in forwards; }
 
 @media (min-width: 750px) {
   .main-grid {
@@ -707,14 +787,15 @@ input:focus, textarea:focus, button:focus {
     .main-grid .footer {
       grid-column: span 2; }
 
-  .school-choice {
+  .school-choice,
+  .signature-choice {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 50px repeat(2, 1fr) repeat(2, 100px);
+    grid-template-rows: 50px repeat(2, 1fr) 100px;
     grid-gap: 10px;
-    height: 100%; }
+    align-items: start; }
     .school-choice .school-step-one,
-    .school-choice .school-buttons {
+    .signature-choice .school-step-one {
       grid-row: span 2; }
 
   h1 {
@@ -723,14 +804,8 @@ input:focus, textarea:focus, button:focus {
   .return {
     grid-column: span 2; }
 
-  .signature-choice {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 50px repeat(2, 1fr) 100px;
-    grid-gap: 10px;
-    height: 100%; }
-    .signature-choice .signature-step-one {
-      grid-row: span 3;
-      align-self: start; } }
+  .signature-choice .signature-step-one {
+    grid-row: span 2;
+    align-self: start; } }
 
 /*# sourceMappingURL=styles.css.map */
