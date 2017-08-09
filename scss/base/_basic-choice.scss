@@ -2,9 +2,9 @@
 .signature-choice {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px repeat(2, 1fr) 100px 100px;
+  grid-template-rows: 50px 100px 1fr 100px 1fr 50px 100px;
   grid-gap: 10px;
-  height: 75vh;
+//  height: 75vh;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,9 @@
     
   }
   .school-step-two,
-  signature-step-two {
+  .signature-step-two {
+    align-self: start;
+    
     .school-date-choice {
       
     }

@@ -4,6 +4,11 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 50px;
     
+    
+    .step-two-icon {
+      grid-column: 2 / 3;
+    }
+    
     .school-box,
     .signature-box {
       grid-row: span 2;
@@ -18,39 +23,48 @@
   .signature-choice {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 50px repeat(2, 1fr) 100px;
+    grid-template-rows: 50px 100px 1fr 100px 100px;
+    grid-template-areas: 
+      'header header'
+      'icon-one icon-two'
+      'step-one step-two'
+      'step-one accept-reset'
+      'return return';
     grid-gap: 10px;
 //    height: 100%;
     align-items: start;
     
+    h1 {
+      grid-area: header;
+    }
+    
+    .step-one-icon {
+      grid-area: icon-one;
+    }
+    
+    .signature-step-one,
     .school-step-one {
-      grid-row: span 2;
+      grid-area: step-one;
+    }
+    
+    .step-two-icon {
+      grid-area: icon-two;
+    }
+
+    .signature-step-two,
+    .school-step-two {
+      grid-area: step-two;
+    }
+    
+    .signature-buttons,
+    .school-buttons {
+      grid-area: accept-reset;
+    }
+    
+    .return {
+      grid-area: return;
     }
     
   }
-  
-  h1 {
-    grid-column: span 2;
-  }
-  
-  .return {
-    grid-column: span 2;
-  }
-  
-  .signature-choice {
-//    display: grid;
-//    grid-template-columns: 1fr 1fr;
-//    grid-template-rows: 50px repeat(2, 1fr) 100px;
-//    grid-gap: 10px;
-////    height: 100%;
-    
-    .signature-step-one {
-      grid-row: span 2;
-      align-self: start;
-    }
-    
-  }
-  
-  
   
 }

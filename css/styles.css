@@ -508,9 +508,8 @@ input:focus, textarea:focus, button:focus {
 .signature-choice {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px repeat(2, 1fr) 100px 100px;
+  grid-template-rows: 50px 100px 1fr 100px 1fr 50px 100px;
   grid-gap: 10px;
-  height: 75vh;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -521,6 +520,11 @@ input:focus, textarea:focus, button:focus {
   .school-choice .signature-step-one,
   .signature-choice .school-step-one,
   .signature-choice .signature-step-one {
+    align-self: start; }
+  .school-choice .school-step-two,
+  .school-choice .signature-step-two,
+  .signature-choice .school-step-two,
+  .signature-choice .signature-step-two {
     align-self: start; }
   .school-choice .school-buttons button,
   .signature-choice .school-buttons button {
@@ -575,7 +579,8 @@ input:focus, textarea:focus, button:focus {
   .school-choice #signature-price:hover,
   .school-choice #school-submit:hover {
     background: #22887f;
-    color: #f3f7f8; }
+    color: #f3f7f8;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2); }
 .signature-choice button,
 .school-choice button {
   background: #373b5d;
@@ -587,7 +592,8 @@ input:focus, textarea:focus, button:focus {
   .signature-choice button:hover,
   .school-choice button:hover {
     background: #22887f;
-    color: #f3f7f8; }
+    color: #f3f7f8;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); }
 .signature-choice #school-date-submit,
 .school-choice #school-date-submit {
   border-radius: 3px;
@@ -664,8 +670,7 @@ input:focus, textarea:focus, button:focus {
   .signature-choice .return:hover,
   .school-choice .return:hover {
     background: white;
-    color: #373b5d;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2); }
+    color: #373b5d; }
 
 .overlay {
   width: 100vw;
@@ -731,6 +736,16 @@ input:focus, textarea:focus, button:focus {
     background: #373b5d;
     color: #f3f7f8; }
 
+.step-one-icon,
+.step-two-icon {
+  height: 100px;
+  width: 100px;
+  margin: auto; }
+  .step-one-icon svg,
+  .step-two-icon svg {
+    height: 100%;
+    width: 100%; }
+
 @keyframes grow {
   0% {
     transform: scale(1); }
@@ -781,6 +796,8 @@ input:focus, textarea:focus, button:focus {
   .main-grid {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 50px; }
+    .main-grid .step-two-icon {
+      grid-column: 2 / 3; }
     .main-grid .school-box,
     .main-grid .signature-box {
       grid-row: span 2; }
@@ -791,21 +808,36 @@ input:focus, textarea:focus, button:focus {
   .signature-choice {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 50px repeat(2, 1fr) 100px;
+    grid-template-rows: 50px 100px 1fr 100px 100px;
+    grid-template-areas: 'header header' 'icon-one icon-two' 'step-one step-two' 'step-one accept-reset' 'return return';
     grid-gap: 10px;
     align-items: start; }
+    .school-choice h1,
+    .signature-choice h1 {
+      grid-area: header; }
+    .school-choice .step-one-icon,
+    .signature-choice .step-one-icon {
+      grid-area: icon-one; }
+    .school-choice .signature-step-one,
     .school-choice .school-step-one,
+    .signature-choice .signature-step-one,
     .signature-choice .school-step-one {
-      grid-row: span 2; }
-
-  h1 {
-    grid-column: span 2; }
-
-  .return {
-    grid-column: span 2; }
-
-  .signature-choice .signature-step-one {
-    grid-row: span 2;
-    align-self: start; } }
+      grid-area: step-one; }
+    .school-choice .step-two-icon,
+    .signature-choice .step-two-icon {
+      grid-area: icon-two; }
+    .school-choice .signature-step-two,
+    .school-choice .school-step-two,
+    .signature-choice .signature-step-two,
+    .signature-choice .school-step-two {
+      grid-area: step-two; }
+    .school-choice .signature-buttons,
+    .school-choice .school-buttons,
+    .signature-choice .signature-buttons,
+    .signature-choice .school-buttons {
+      grid-area: accept-reset; }
+    .school-choice .return,
+    .signature-choice .return {
+      grid-area: return; } }
 
 /*# sourceMappingURL=styles.css.map */
