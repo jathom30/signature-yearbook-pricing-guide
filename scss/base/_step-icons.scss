@@ -7,4 +7,13 @@
     height: 100%;
     width: 100%;
   }
+  
+}
+
+.step-one-icon {
+  animation: grow 200ms ease-in-out 200ms;
+}
+
+.step-two-icon {
+  animation: grow 200ms ease-in-out 600ms;
 }

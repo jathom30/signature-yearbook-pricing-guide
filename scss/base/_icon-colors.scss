@@ -1,0 +1,11 @@
+svg {
+  #icon-circle {
+    fill: $circle-fill;
+  }
+  #icon-shadow {
+    fill: $shadow-fill;
+  }
+  #icons * {
+    fill: $icon-fill;
+  }
+}

@@ -45,12 +45,14 @@ $('.return').click(function() {
 $signatureButton.click(function() {
   $overlay.show();
   $passwordDiv.addClass('is-active');
+  $('.lock-icon').addClass('is-active');
 });
 
 //After correct password, show signature section
 $signaturePasswordButton.click(function() {
   if ($password.val() == correctPassword) {
     $passwordDiv.removeClass('is-active');
+    $('.lock-icon').removeClass('is-active');
     $('.main-grid').hide();
     $signatureChoice.show();
     $overlay.hide()
@@ -61,16 +63,11 @@ $signaturePasswordButton.click(function() {
   }
 });
 
-//hide modal if 'x' is clicked
-$('.exit-modal').click(function() {
-  $passwordDiv.removeClass('is-active');
-  modalMessageReset();
-  $overlay.hide();
-});
-
+//click overlay to hide overlay and password prompt
 $overlay.click(function() {
   $overlay.hide();
   $passwordDiv.removeClass('is-active');
+  $('.lock-icon').removeClass('is-active');
 });
 
 
