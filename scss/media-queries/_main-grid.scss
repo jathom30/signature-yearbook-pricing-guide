@@ -1,4 +1,4 @@
-@media (min-width:$large) {
+@media (min-width:$large) and (pointer: fine) {
   .main-grid {
 //    background: pink;
     grid-template-columns: 1fr 1fr;

@@ -44,6 +44,9 @@
       color: $background;
       box-shadow: 0 5px 5px rgba(0,0,0,.2);
     }
+    &:disabled {
+      @include disabled-button;
+    }
   }
   
   
@@ -70,6 +73,9 @@
     &:hover {
       background: $button-green;
       color: $background;
+    }
+    &:disabled {
+      @include disabled-button;
     }
   }
   

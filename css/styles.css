@@ -420,13 +420,13 @@ input:focus, textarea:focus, button:focus {
   align-content: center;
   justify-content: center;
   height: 25vh;
+  min-height: 150px;
   max-width: 1000px;
   margin: auto; }
   .cta .book {
     display: none;
     height: 150px;
     width: 150px;
-    margin: auto;
     align-self: center;
     padding: 5px; }
     .cta .book svg {
@@ -581,6 +581,16 @@ input:focus, textarea:focus, button:focus {
     background: #22887f;
     color: #f3f7f8;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2); }
+  .signature-choice #signature-submit:disabled,
+  .signature-choice #signature-price:disabled,
+  .signature-choice #school-submit:disabled,
+  .school-choice #signature-submit:disabled,
+  .school-choice #signature-price:disabled,
+  .school-choice #school-submit:disabled {
+    color: #a3a3a3;
+    background: #e0e0e0;
+    border-color: #a3a3a3;
+    box-shadow: none; }
 .signature-choice button,
 .school-choice button {
   background: #373b5d;
@@ -605,6 +615,12 @@ input:focus, textarea:focus, button:focus {
   .school-choice #school-date-submit:hover {
     background: #22887f;
     color: #f3f7f8; }
+  .signature-choice #school-date-submit:disabled,
+  .school-choice #school-date-submit:disabled {
+    color: #a3a3a3;
+    background: #e0e0e0;
+    border-color: #a3a3a3;
+    box-shadow: none; }
 .signature-choice .signature-buttons button,
 .signature-choice .school-buttons button,
 .school-choice .signature-buttons button,
@@ -802,7 +818,7 @@ svg #icons * {
     transform-origin: center;
     animation: shrink 200ms ease-in forwards; }
 
-@media (min-width: 750px) {
+@media (min-width: 750px) and (pointer: fine) {
   .main-grid {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 50px; }
@@ -849,5 +865,8 @@ svg #icons * {
     .school-choice .return,
     .signature-choice .return {
       grid-area: return; } }
+@media (pointer: coarse) {
+  body {
+    font-size: 2em; } }
 
 /*# sourceMappingURL=styles.css.map */

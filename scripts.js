@@ -120,7 +120,30 @@ var $pageCount = $('#page-count'),
     pageMinCost = 0.1195,
     pageMaxCost = 0.3775;
 
+
 //step one
+
+//disable button by default
+$schoolSubmit.prop('disabled', true);
+//test to see if proper fields are filled in
+function disableButton() {
+  if ($pageCount.val() == '' || $schoolQuantity.val() == '') {
+    $schoolSubmit.prop('disabled', true);
+  } else {
+    $schoolSubmit.prop('disabled', false);
+  }
+}
+
+
+$pageCount.on('keyup', function() {
+  disableButton();
+});
+
+$schoolQuantity.on('keyup', function() {
+  disableButton();
+});
+
+
 $schoolSubmit.click(function() {
   if (!($pageCount.val() % 4 == 0)) {
     alert('page count must be a multiple of four');
@@ -136,45 +159,7 @@ $schoolSubmit.click(function() {
 
 
 //step two
-//$selectedMonth = $('#month');
-//$selectedYear = $('#year');
-//$selectedDay = $('#day');
-//
-////adjust number of days in selected month
-//
-//
-//$selectedMonth.mousedown(function() {
-//  $selectedDay.children('option').remove();
-////  populateDays($selectedMonth.val())
-//});
-//
-//$selectedMonth.mouseleave(
-//  populateDays($selectedMonth.val())
-//);
-//
-//
-//function populateDays(month) {
-//  
-//  var daysInMonth;
-//  
-//  if (month === 'January' || month === 'March' || month === 'May' || month === 'July' || month === 'August' || month === 'October' || month === 'December') {
-//    daysInMonth = 31;
-//  } else if (month === 'April' || month === 'June' || month === 'September' || month === 'November' ) {
-//    daysInMonth = 30;
-//  } else {
-//  // If month is February, calculate whether it is a leap year or not
-//    var year = $selectedYear.value;
-//    (year - 2016) % 4 === 0 ? dayNum = 29 : dayNum = 28;
-//  }
-//  
-//  // inject the right number of new <option> elements into the day <select>
-//  for(i = 1; i <= daysInMonth; i++) {
-//    var option = document.createElement('option');
-//    option.textContent = i;
-//    $selectedDay.append(option);
-//  }
-//  
-//}
+
 // define variables
 var nativePicker = document.querySelector('.nativeDatePicker');
 var fallbackPicker = document.querySelector('.fallbackDatePicker');
@@ -288,6 +273,7 @@ daySelect.onchange = function() {
   previousDay = daySelect.value;
 }
 
+//month days for previous month for math
 const months = {'January': 31,
                 'February': 31,
                 'March': 28,
@@ -301,6 +287,20 @@ const months = {'January': 31,
                 'November': 31, 
                 'December': 30
                };
+
+//check that the date has been filled in before submit button is enabled
+function disableDate() {
+  if ($('#day').val()) {
+    $schoolDateSubmit.prop('disabled', false);
+  } 
+}
+
+$('#day').change(function() {
+  disableDate();
+});
+
+//disable button by default
+$schoolDateSubmit.prop('disabled', true);
 
 $schoolDateSubmit.click(function() {
   var dayNum = months[monthSelect.value];  
@@ -351,6 +351,8 @@ $('#school-reset').click(function() {
   $schoolDateInput.val('');
   $schoolQuote.html('<p>Price quote range (per book):</p>');
   $schoolDueDate.text('Due date:');
+  $schoolSubmit.prop('disabled', true);
+  $schoolDateSubmit.prop('disabled', true);
 });
 
 

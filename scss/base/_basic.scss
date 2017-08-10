@@ -34,6 +34,7 @@ input:focus, textarea:focus, button:focus {
   align-content: center;
   justify-content: center;
   height: 25vh;
+  min-height: 150px;
   max-width: 1000px;
   margin: auto;
   
@@ -41,7 +42,7 @@ input:focus, textarea:focus, button:focus {
     display: none;
     height: 150px;
     width: 150px;
-    margin: auto;
+//    margin: auto;
     align-self: center;
     padding: 5px;
     svg {

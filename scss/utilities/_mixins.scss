@@ -12,3 +12,10 @@
   border-bottom: 1px solid $dark-blue;
   border-top: 1px solid $dark-blue;
 }
+
+@mixin disabled-button {
+  color: #a3a3a3;
+  background: #e0e0e0;
+  border-color: #a3a3a3;
+  box-shadow: none;
+}
