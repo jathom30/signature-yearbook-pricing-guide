@@ -19,3 +19,11 @@
   border-color: #a3a3a3;
   box-shadow: none;
 }
+
+@mixin label-height {
+  height: 2em;
+  line-height: 2em;
+  font-size: 2em;
+  padding: 0;
+  margin: 0;
+}

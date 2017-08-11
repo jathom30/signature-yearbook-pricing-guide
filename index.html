@@ -199,6 +199,7 @@
 </g>
 </svg>
       </div>
+      
     <div class="signature-step-two">
       <h3>Step Two</h3>
       <p>Set Price Per Book:</p>
@@ -253,8 +254,10 @@
       <p>Page Count <br>(must be a multiple of four):</p>
       <input id="page-count" type="number" placeholder="44">
       <p>Quantity requested:</p>
-      <input id="school-quantity" type="number" placeholder="200"><!--
-   --><button id="school-submit" type="button">Submit</button>
+      <div class="school-quantity-requested">
+        <input id="school-quantity" type="number" min="100" placeholder="200"><!--
+           --><button id="school-submit" type="button">Submit</button>
+      </div>
       <div id="school-quote-range">
         <p>Price quote range (per book):</p>
       </div>
@@ -375,8 +378,10 @@
 </svg>
     </div>
     <h2>Please, enter your password:</h2>
-    <input id="password" type="password" placeholder="password"><!--
-   --><button id="signature-password-button" type="button">Submit</button>
+    <div class="password-inputs">
+      <input id="password" type="password" placeholder="password"><!--
+         --><button id="signature-password-button" type="button">Submit</button>
+    </div>
   </div>
   
 

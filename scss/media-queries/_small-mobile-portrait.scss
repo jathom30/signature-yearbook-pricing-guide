@@ -1,0 +1,184 @@
+@media only screen and (max-device-width: 500px) and (orientation: portrait) {
+  body {
+    -webkit-text-size-adjust: 100%;
+    font-size: 1.5em;
+  }
+  
+  //front page
+  .cta {
+    .book {
+      padding-left: 1em;
+    }
+  }
+  
+  .main-grid {
+    .school-button {
+      width: 50%;
+    }
+    
+    .school-button-icon,
+    .signature-button-icon {
+      width: 250px;
+      height: 250px;
+    }
+    
+    h2 {
+      font-size: 2.5em;
+      width: 100%;
+      padding-top: 1em;
+    }
+    
+  }
+  
+  //School Side & Signature side
+  .school-choice,
+  .signature-choice {
+    
+    grid-template-rows: 300px 150px 1fr 100px 1fr 100px 300px;
+    
+    h1 {
+      font-size: 4em;
+      width: 50%;
+    }
+    
+    .step-one-icon,
+    .step-two-icon {
+//      margin-top: 100px;
+      width: 150px;
+      height: 150px;
+    }
+    
+    .school-step-one,
+    .signature-step-one {
+      margin-bottom: 200px;      
+    }
+    
+    h3 {
+      font-size: 2.5em;
+    }
+
+    p {
+      font-size: 2em;
+    }
+    
+    input {
+      height: 2em;
+      font-size: 2em;
+      text-align: center;
+      line-height: 2em;
+      padding: 0;
+      margin: 0;
+    }
+    
+    #page-count,
+    #quantity-signature {
+      width: 75%;
+    }
+    
+    .school-quantity-requested {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    #school-quantity,
+    #quote-signature,
+    #price-set {
+      width: calc(75% - 300px);
+      @include label-height;
+    }
+    
+    #school-submit,
+    #signature-submit,
+    #signature-price {
+      width: 300px;
+      line-height: 2em;
+      font-size: 2em;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .school-date-choice {
+      display: flex;
+      flex-direction: column;
+      
+      label {
+        font-size: 2em;
+        padding: .25em 0 .5em 0;
+      }
+      select {
+        font-size: 2em;
+        background: white;
+        padding: .25em;
+        width: 75%;
+        text-align: center;
+        margin: 0 auto;
+      }
+      #year {
+        margin-bottom: 1.5em;
+      }
+      
+    }
+    
+    #school-date-submit {
+      width: 75%;
+      height: 2em;
+      font-size: 2em;
+      line-height: 2em;
+    }
+    
+    .school-buttons,
+    .signature-buttons {
+      width: 75%;
+      margin: 2em auto .5em;
+      
+      #school-accept, #school-reset,
+      #signature-accept, #signature-reset {
+        width: 50%;
+        @include label-height;
+      }
+      
+    }
+    
+    .return {
+        @include label-height;
+        width: 75%;
+      margin: auto;
+      }
+    
+  }
+  
+  .password {
+    width: 75%;
+    left: calc(25% / 2);
+    
+    .lock-icon {
+      width: 300px;
+      height: 300px;
+      padding: 1em 0;
+    }
+    
+    h2 {
+      font-size: 2em;
+    }
+    
+    .password-inputs {
+      margin-bottom: 1em;
+      #password {
+        @include label-height;
+        width: calc(90% - 250px);
+        padding-left: .5em;
+      }
+
+      #signature-password-button {
+        width: 250px;
+        line-height: 2em;
+        font-size: 2em;
+        padding: 0;
+        margin: 0;
+      }
+    }
+    
+  }
+  
+}

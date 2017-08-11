@@ -1,0 +1,154 @@
+@media only screen and (max-device-width: 1400px) and (min-device-width: 501px) and (orientation: landscape) {
+  body {
+    -webkit-text-adjust: 100%;
+    font-size: 1.5em;
+  }
+  
+  .max-width {
+//    height: 100px;
+    .cta {
+      h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1em;
+      }
+    }
+  }
+  
+  .main-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 100px;
+    
+    .school-box,
+    .signature-box {
+      grid-row: span 2;
+    }
+    
+    .footer {
+      grid-column: span 2;
+    }
+    
+  }
+  
+  
+  //school and signature sections
+  .school-choice,
+  .signature-choice {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100px 100px 1fr 50px 100px;
+    
+    h1 {
+      grid-column: span 2;
+    }
+    
+    .school-step-one,
+    .signature-step-one {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+      
+      #page-count,
+      #quantity-signature {
+        width: 80%;
+        text-align: center;
+        line-height: 1em;
+        font-size: 1em;
+        padding: 0;
+        margin: 0;
+        height: 1em;
+      }
+      
+      
+      
+    }
+    
+    #school-quantity,
+    #quote-signature,
+    #price-set {
+      width: calc(80% - 100px);
+      text-align: center;
+      line-height: 1em;
+      font-size: 1em;
+      padding: 0;
+      margin: 0;
+      height: 1em;
+    }
+
+    #school-submit,
+    #signature-submit,
+    #signature-price {
+      width: 100px;
+      line-height: 1em;
+      font-size: 1em;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .school-date-choice {
+      display: flex;
+      flex-direction: column;
+      
+    label {
+      font-size: 1em;
+      padding: .125em 0 .25em 0;
+    }
+    select {
+      font-size: 1em;
+      background: white;
+      padding: .125em;
+      width: 75%;
+      text-align: center;
+      margin: 0 auto;
+    }
+    #year {
+      margin-bottom: .75em;
+    }
+
+  }
+
+    .school-buttons,
+    .signature-buttons {
+      grid-column: span 2;
+      grid-row: 4 / 5;
+      width: 75%;
+      margin: 0 auto;
+      
+      #school-accept, #school-reset,
+      #signature-accept, #signature-reset {
+        width: 50%;
+      }
+    }
+    
+    .return {
+      grid-column: span 2;
+      grid-row: 5 / 6;
+      width: 75%;
+    }
+    
+  }
+  
+  .password {
+    h2 {
+      font-size: 1em;
+    }
+    
+    #password {
+      width: calc(80% - 100px);
+      line-height: 1em;
+      font-size: 1em;
+      height: 1em;
+      padding: 0;
+      margin: 0;
+    }
+    
+    #signature-password-button {
+      width: 100px;
+      line-height: 1em;
+      font-size: 1em;
+      padding: 0;
+      margin: 0;
+    }
+    
+  }
+  
+}
