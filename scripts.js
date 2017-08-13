@@ -19,7 +19,21 @@ function modalMessageReset() {
   $password.val('');
 }
 
+function addSlideAnimation() {
+  $('.school-step-one').addClass('slide');
+  $('.signature-step-one').addClass('slide');
+  $('.school-step-two').addClass('slide');
+  $('.signature-step-two').addClass('slide');
+  $('.last-step').addClass('slide');
+}
 
+function removeSlideAnimation() {
+  $('.school-step-one').removeClass('slide');
+  $('.signature-step-one').removeClass('slide');
+  $('.school-step-two').removeClass('slide');
+  $('.signature-step-two').removeClass('slide');
+  $('.last-step').removeClass('slide');
+}
 
 //DOM setup
 $signatureChoice.hide();
@@ -35,6 +49,7 @@ $('.spacer').click(function() {
   setTimeout(function() {
     $schoolChoice.hide();
     $signatureChoice.hide();
+    removeSlideAnimation();
   }, 500);
   modalMessageReset();
 });
@@ -44,6 +59,7 @@ $schoolButton.click(function() {
   $signatureButton.addClass('active');
   $schoolButton.addClass('active');
   $schoolChoice.show();
+  addSlideAnimation();
   $doors.css('pointer-events', 'none');
 });
 
@@ -55,6 +71,7 @@ $('.return').click(function() {
   setTimeout(function() {
     $schoolChoice.hide();
     $signatureChoice.hide();
+    removeSlideAnimation();
   }, 500);
   modalMessageReset();
 });
@@ -75,6 +92,7 @@ $signaturePasswordButton.click(function() {
     $signatureButton.addClass('active');
     $schoolButton.addClass('active');
     $signatureChoice.show();
+    addSlideAnimation();
     $doors.css('pointer-events', 'none');
     $overlay.hide()
   }

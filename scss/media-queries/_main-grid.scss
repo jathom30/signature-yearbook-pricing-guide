@@ -27,14 +27,14 @@
   .school-choice,
   .signature-choice {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 150px 50px 100px 1fr 200px;
     grid-template-areas:
-      'spacer spacer'
-      'header header'
-      'icon-one icon-two'
-      'step-one step-two'
-      '. last-step';
+      'spacer spacer spacer spacer'
+      'header header header header'
+      'icon-one icon-one icon-two icon-two'
+      'step-one step-one step-two step-two'
+      '. last-step last-step .';
     grid-gap: 10px;
 //    height: 100%;
     align-items: start;

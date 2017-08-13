@@ -101,7 +101,12 @@
     
     .school-step-one,
     .signature-step-one {
-      margin-bottom: 200px;      
+      margin-bottom: 200px;
+      transform: none;
+    }
+    .school-step-one,
+    .signature-step-one {
+      transform: none;
     }
     
     h3 {
@@ -192,6 +197,7 @@
     }
     
     .last-step {
+      transform: none;
       .return {
         @include label-height;
         width: 75% !important;

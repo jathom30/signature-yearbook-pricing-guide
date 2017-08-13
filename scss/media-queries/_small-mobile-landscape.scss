@@ -47,6 +47,7 @@
 
     .school-step-one,
     .signature-step-one {
+      transform: none;
       #page-count,
       #quantity-signature {
         width: 80%;
@@ -58,7 +59,13 @@
         height: 1em;
       }
     }
-    
+    .school-step-two,
+    signature-step-two {
+      transform: none;
+    }
+    .last-step {
+      transform: none;
+    }
     #school-quantity,
     #quote-signature,
     #price-set {

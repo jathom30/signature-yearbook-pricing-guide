@@ -561,7 +561,14 @@ input:focus, textarea:focus, button:focus {
     border-radius: 5px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     width: 95%;
-    margin: .5em auto 2em; }
+    margin: .5em auto 2em;
+    transform: translateX(-250%);
+    transition: transform 300ms ease-in-out 500ms; }
+    .school-choice .school-step-one.slide,
+    .school-choice .signature-step-one.slide,
+    .signature-choice .school-step-one.slide,
+    .signature-choice .signature-step-one.slide {
+      transform: translate(0, 0); }
   .school-choice .school-step-two,
   .school-choice .signature-step-two,
   .signature-choice .school-step-two,
@@ -571,7 +578,14 @@ input:focus, textarea:focus, button:focus {
     border-radius: 5px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     width: 95%;
-    margin: .5em auto 2em; }
+    margin: .5em auto 2em;
+    transform: translateX(250%);
+    transition: transform 300ms ease-in-out 1000ms; }
+    .school-choice .school-step-two.slide,
+    .school-choice .signature-step-two.slide,
+    .signature-choice .school-step-two.slide,
+    .signature-choice .signature-step-two.slide {
+      transform: translate(0, 0); }
   .school-choice .last-step,
   .signature-choice .last-step {
     display: flex;
@@ -582,7 +596,12 @@ input:focus, textarea:focus, button:focus {
     border-radius: 5px;
     justify-content: center;
     margin-bottom: 2em;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(500%);
+    transition: transform 300ms ease-in-out 1500ms; }
+    .school-choice .last-step.slide,
+    .signature-choice .last-step.slide {
+      transform: translate(0, 0); }
     .school-choice .last-step #school-accept,
     .school-choice .last-step #school-reset,
     .school-choice .last-step #signature-accept,
@@ -854,10 +873,10 @@ input:focus, textarea:focus, button:focus {
     width: 100%; }
 
 .step-one-icon {
-  animation: show 300ms ease-in-out .6s forwards; }
+  animation: show 300ms ease-in-out 500ms forwards; }
 
 .step-two-icon {
-  animation: show 300ms ease-in-out 1s forwards; }
+  animation: show 300ms ease-in-out 1000ms forwards; }
 
 svg #icon-circle {
   fill: #5b5d8e; }
@@ -944,9 +963,9 @@ svg #icons * {
   .school-choice,
   .signature-choice {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 150px 50px 100px 1fr 200px;
-    grid-template-areas: 'spacer spacer' 'header header' 'icon-one icon-two' 'step-one step-two' '. last-step';
+    grid-template-areas: 'spacer spacer spacer spacer' 'header header header header' 'icon-one icon-one icon-two icon-two' 'step-one step-one step-two step-two' '. last-step last-step .';
     grid-gap: 10px;
     align-items: start; }
     .school-choice .spacer,
@@ -1050,7 +1069,13 @@ svg #icons * {
     .school-choice .signature-step-one,
     .signature-choice .school-step-one,
     .signature-choice .signature-step-one {
-      margin-bottom: 200px; }
+      margin-bottom: 200px;
+      transform: none; }
+    .school-choice .school-step-one,
+    .school-choice .signature-step-one,
+    .signature-choice .school-step-one,
+    .signature-choice .signature-step-one {
+      transform: none; }
     .school-choice h3,
     .signature-choice h3 {
       font-size: 2.5em; }
@@ -1149,15 +1174,18 @@ svg #icons * {
         font-size: 2em;
         padding: 0;
         margin: 0; }
-    .school-choice .last-step .return,
-    .signature-choice .last-step .return {
-      height: 2em;
-      line-height: 2em;
-      font-size: 2em;
-      padding: 0;
-      margin: 0;
-      width: 75% !important;
-      margin: 0 auto .5em; }
+    .school-choice .last-step,
+    .signature-choice .last-step {
+      transform: none; }
+      .school-choice .last-step .return,
+      .signature-choice .last-step .return {
+        height: 2em;
+        line-height: 2em;
+        font-size: 2em;
+        padding: 0;
+        margin: 0;
+        width: 75% !important;
+        margin: 0 auto .5em; }
 
   .password {
     width: 75%;
@@ -1217,21 +1245,34 @@ svg #icons * {
   .school-choice .spacer,
   .signature-choice .spacer {
     height: 100px; }
-  .school-choice .school-step-one #page-count,
-  .school-choice .school-step-one #quantity-signature,
-  .school-choice .signature-step-one #page-count,
-  .school-choice .signature-step-one #quantity-signature,
-  .signature-choice .school-step-one #page-count,
-  .signature-choice .school-step-one #quantity-signature,
-  .signature-choice .signature-step-one #page-count,
-  .signature-choice .signature-step-one #quantity-signature {
-    width: 80%;
-    text-align: center;
-    line-height: 1em;
-    font-size: 1em;
-    padding: 0;
-    margin: 0;
-    height: 1em; }
+  .school-choice .school-step-one,
+  .school-choice .signature-step-one,
+  .signature-choice .school-step-one,
+  .signature-choice .signature-step-one {
+    transform: none; }
+    .school-choice .school-step-one #page-count,
+    .school-choice .school-step-one #quantity-signature,
+    .school-choice .signature-step-one #page-count,
+    .school-choice .signature-step-one #quantity-signature,
+    .signature-choice .school-step-one #page-count,
+    .signature-choice .school-step-one #quantity-signature,
+    .signature-choice .signature-step-one #page-count,
+    .signature-choice .signature-step-one #quantity-signature {
+      width: 80%;
+      text-align: center;
+      line-height: 1em;
+      font-size: 1em;
+      padding: 0;
+      margin: 0;
+      height: 1em; }
+  .school-choice .school-step-two,
+  .school-choice signature-step-two,
+  .signature-choice .school-step-two,
+  .signature-choice signature-step-two {
+    transform: none; }
+  .school-choice .last-step,
+  .signature-choice .last-step {
+    transform: none; }
   .school-choice #school-quantity,
   .school-choice #quote-signature,
   .school-choice #price-set,

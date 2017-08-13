@@ -29,6 +29,11 @@
     box-shadow: 0 5px 5px rgba(0,0,0,.2);
     width: 95%;
     margin: .5em auto 2em;
+    transform: translateX(-250%);
+    transition: transform 300ms ease-in-out 500ms;
+    &.slide {
+      transform: translate(0,0);
+    }
   }
   .school-step-two,
   .signature-step-two {
@@ -38,6 +43,11 @@
     box-shadow: 0 5px 5px rgba(0,0,0,.2);
     width: 95%;
     margin: .5em auto 2em;
+    transform: translateX(250%);
+    transition: transform 300ms ease-in-out 1000ms;
+    &.slide {
+      transform: translate(0,0);
+    }
     
     .school-date-choice {
       
@@ -54,6 +64,11 @@
     justify-content: center;
     margin-bottom: 2em;
     box-shadow: 0 5px 5px rgba(0,0,0,.2);
+    transform: translateY(500%);
+    transition: transform 300ms ease-in-out 1500ms;
+    &.slide {
+      transform: translate(0,0);
+    }
     
     #school-accept,
     #school-reset,
