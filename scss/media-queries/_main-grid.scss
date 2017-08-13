@@ -1,21 +1,26 @@
-@media (min-width:$large) and (pointer: fine) {
-  .main-grid {
+@media (min-width:$large) {
+  .doors {
+    display: grid;
 //    background: pink;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 50px;
-    
-    
-    .step-two-icon {
-      grid-column: 2 / 3;
-    }
-    
+    grid-template-rows: calc((100vh - 150px - 2.5em) / 2);
+    height: calc(100vh - 150px - 2.5em);
     .school-box,
     .signature-box {
-      grid-row: span 2;
+      border: none;
+      height: calc(100vh - 150px - 2.5em);
     }
-
-    .footer {
-      grid-column: span 2;
+    .school-box {
+      border-right: 1px solid $dark-blue;
+      &.active {
+        transform: translateX(-150%);
+      }
+    }
+    .signature-box {
+      border-left: 1px solid $dark-blue;
+      &.active {
+        transform: translateX(150%);
+      }
     }
   }
   
@@ -23,16 +28,20 @@
   .signature-choice {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 50px 100px 1fr 100px 100px;
-    grid-template-areas: 
+    grid-template-rows: 150px 50px 100px 1fr 200px;
+    grid-template-areas:
+      'spacer spacer'
       'header header'
       'icon-one icon-two'
       'step-one step-two'
-      'step-one accept-reset'
-      'return return';
+      '. last-step';
     grid-gap: 10px;
 //    height: 100%;
     align-items: start;
+    
+    .spacer {
+      grid-area: spacer;
+    }
     
     h1 {
       grid-area: header;
@@ -56,14 +65,17 @@
       grid-area: step-two;
     }
     
-    .signature-buttons,
-    .school-buttons {
-      grid-area: accept-reset;
+    .last-step {
+      grid-area: last-step;
     }
-    
-    .return {
-      grid-area: return;
-    }
+//    .signature-buttons,
+//    .school-buttons {
+//      grid-area: accept-reset;
+//    }
+//    
+//    .return {
+//      grid-area: return;
+//    }
     
   }
   

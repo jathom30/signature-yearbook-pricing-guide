@@ -6,20 +6,46 @@
   
   //front page
   .cta {
+    height: 200px;
     .book {
       padding-left: 1em;
+      #icon-shadow {
+        opacity: 0;
+      }
+    }
+    h1 {
+      font-size: 2.25em;
     }
   }
   
-  .main-grid {
-    .school-button {
-      width: 50%;
+  .doors {
+    display: block;
+    position: fixed;
+    top: 200px;
+    left: 0;
+    right: 0;
+    height: calc(100vh - 200px - 2em);
+    z-index: 10;
+
+    .school-box {
+      height: calc((100vh - 200px - 2em) / 2);
+      border-bottom: 1px solid $dark-blue;
+    }
+    .signature-box {
+      height: calc((100vh - 200px - 2em) / 2);
+      border-top: 1px solid $dark-blue;
     }
     
     .school-button-icon,
     .signature-button-icon {
       width: 250px;
       height: 250px;
+      #icon-circle {
+        fill: $dark-blue;
+      }
+      #icon-shadow {
+        opacity: 0;
+      }
     }
     
     h2 {
@@ -28,13 +54,32 @@
       padding-top: 1em;
     }
     
+    .school-box.active {
+      transform: translateY(-150%); 
+    }
+
+    .signature-box.active {
+      transform: translateY(150%);
+    }
+    
   }
   
   //School Side & Signature side
+
+  
   .school-choice,
   .signature-choice {
     
-    grid-template-rows: 300px 150px 1fr 100px 1fr 100px 300px;
+    grid-template-rows: 200px 150px 150px 100% 150px 100% 100px 300px;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      'spacer'
+      'header'
+      'icon-one'
+      'step-one'
+      'icon-two'
+      'step-two'
+      'last-step';
     
     h1 {
       font-size: 4em;
@@ -46,6 +91,12 @@
 //      margin-top: 100px;
       width: 150px;
       height: 150px;
+      #icon-circle {
+        fill: $dark-blue;
+      }
+      #icon-shadow {
+        opacity: 0;
+      }
     }
     
     .school-step-one,
@@ -140,11 +191,14 @@
       
     }
     
-    .return {
+    .last-step {
+      .return {
         @include label-height;
-        width: 75%;
-      margin: auto;
+        width: 75% !important;
+        margin: 0 auto .5em;
       }
+    }
+    
     
   }
   

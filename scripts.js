@@ -1,11 +1,12 @@
 //variables
 const $signatureChoice = $('.signature-choice');
 const $schoolChoice = $('.school-choice');
-const $banner = $('.cta');
+const $banner = $('.max-width');
 const $signatureButton = $('.signature-box');
 const $schoolButton = $('.school-box');
 const correctPassword = 'signature';
 const $overlay = $('.overlay');
+const $doors = $('.doors');
 
 const $password = $('#password');
 var $passwordDiv = $('.password');
@@ -26,17 +27,35 @@ $schoolChoice.hide();
 $overlay.hide();
 
 
+//banner returns to home
+$('.spacer').click(function() {
+  $signatureButton.removeClass('active');
+  $schoolButton.removeClass('active');
+  $doors.css('pointer-events', 'all');
+  setTimeout(function() {
+    $schoolChoice.hide();
+    $signatureChoice.hide();
+  }, 500);
+  modalMessageReset();
+});
+
 //show school section when button is clicked
 $schoolButton.click(function() {
+  $signatureButton.addClass('active');
+  $schoolButton.addClass('active');
   $schoolChoice.show();
-  $('.main-grid').hide();
+  $doors.css('pointer-events', 'none');
 });
 
 //hide school section when return is clicked
 $('.return').click(function() {
-  $schoolChoice.hide();
-  $signatureChoice.hide();
-  $('.main-grid').show();
+  $signatureButton.removeClass('active');
+  $schoolButton.removeClass('active');
+  $doors.css('pointer-events', 'all');
+  setTimeout(function() {
+    $schoolChoice.hide();
+    $signatureChoice.hide();
+  }, 500);
   modalMessageReset();
 });
 
@@ -53,8 +72,10 @@ $signaturePasswordButton.click(function() {
   if ($password.val() == correctPassword) {
     $passwordDiv.removeClass('is-active');
     $('.lock-icon').removeClass('is-active');
-    $('.main-grid').hide();
+    $signatureButton.addClass('active');
+    $schoolButton.addClass('active');
     $signatureChoice.show();
+    $doors.css('pointer-events', 'none');
     $overlay.hide()
   }
   else {

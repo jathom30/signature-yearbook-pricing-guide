@@ -394,34 +394,33 @@ template {
   font-family: 'Merriweather', serif; }
 
 body {
-  background: #373b5d; }
+  background: #f3f7f8; }
 
 input:focus, textarea:focus, button:focus {
   outline: none; }
 
-.main-grid {
-  display: grid;
-  grid-template-rows: 1fr 1fr 50px;
-  height: 75vh;
-  align-items: center;
-  max-width: 1000px;
-  margin: auto;
-  background: #f3f7f8; }
+.top-and-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  pointer-events: none; }
 
 .max-width {
-  background: url(../img/tattered-edges-of-book-pages.jpg) no-repeat center;
-  background-size: cover;
-  max-width: 1000px;
-  margin: auto; }
+  background-color: #373b5d;
+  background-size: cover; }
 
 .cta {
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
-  height: 25vh;
-  min-height: 150px;
   max-width: 1000px;
+  height: 150px;
   margin: auto; }
   .cta .book {
     display: none;
@@ -434,7 +433,6 @@ input:focus, textarea:focus, button:focus {
       width: 100%; }
   .cta h1 {
     color: #f3f7f8;
-    text-shadow: 0 5px 5px black;
     text-align: center;
     margin: 0 auto;
     text-transform: uppercase;
@@ -445,7 +443,6 @@ input:focus, textarea:focus, button:focus {
         font-size: 3em; } }
   .cta h2 {
     color: #f3f7f8;
-    text-shadow: 0 5px 5px black;
     text-align: center;
     align-self: start;
     margin: 0 auto; }
@@ -464,6 +461,20 @@ input:focus, textarea:focus, button:focus {
         grid-column: 2 / 6;
         text-align: right;
         padding-right: 1rem; } }
+
+.doors {
+  position: fixed;
+  top: 150px;
+  left: 0;
+  right: 0;
+  height: calc(100vh - 150px - 2.5em);
+  z-index: 10; }
+  .doors .school-box {
+    height: 50%;
+    border-bottom: 1px solid #373b5d; }
+  .doors .signature-box {
+    height: 50%;
+    border-top: 1px solid #373b5d; }
 
 .school-box,
 .signature-box {
@@ -500,38 +511,119 @@ input:focus, textarea:focus, button:focus {
 .signature-button .signature-button {
   padding: 25px; }
 
+.school-box,
+.signature-box {
+  overflow: hidden;
+  transition: transform .5s ease-in-out;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #f3f7f8; }
+
+.school-box.active {
+  transform: translateY(-150%); }
+
+.signature-box.active {
+  transform: translateY(150%); }
+
 .footer {
+  height: 2em;
+  line-height: 2em;
+  background: #373b5d;
+  color: #f3f7f8;
   text-align: center;
-  padding: 10px 0; }
+  padding: .25em 0; }
 
 .school-choice,
 .signature-choice {
+  transition: all 300ms ease-out;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px 100px 1fr 100px 1fr 50px 100px;
-  grid-gap: 10px;
+  grid-template-rows: 150px 50px 100px 100% 100px 100% 200px;
   text-align: center;
   justify-content: center;
   align-items: center;
   background: #f3f7f8;
   max-width: 1000px;
   margin: auto; }
+  .school-choice .spacer,
+  .signature-choice .spacer {
+    height: 150px;
+    width: 100vw;
+    background-color: #373b5d;
+    cursor: pointer; }
   .school-choice .school-step-one,
   .school-choice .signature-step-one,
   .signature-choice .school-step-one,
   .signature-choice .signature-step-one {
-    align-self: start; }
+    align-self: start;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    width: 95%;
+    margin: .5em auto 2em; }
   .school-choice .school-step-two,
   .school-choice .signature-step-two,
   .signature-choice .school-step-two,
   .signature-choice .signature-step-two {
-    align-self: start; }
-  .school-choice .school-buttons button,
-  .signature-choice .school-buttons button {
-    border: none; }
-    .school-choice .school-buttons button:hover,
-    .signature-choice .school-buttons button:hover {
-      cursor: pointer; }
+    align-self: start;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    width: 95%;
+    margin: .5em auto 2em; }
+  .school-choice .last-step,
+  .signature-choice .last-step {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 0 auto;
+    background: white;
+    border-radius: 5px;
+    justify-content: center;
+    margin-bottom: 2em;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2); }
+    .school-choice .last-step #school-accept,
+    .school-choice .last-step #school-reset,
+    .school-choice .last-step #signature-accept,
+    .school-choice .last-step #signature-reset,
+    .signature-choice .last-step #school-accept,
+    .signature-choice .last-step #school-reset,
+    .signature-choice .last-step #signature-accept,
+    .signature-choice .last-step #signature-reset {
+      line-height: 1.5em;
+      height: 1.5em;
+      font-size: 1.5em;
+      padding: 0;
+      margin: 0;
+      width: 45%; }
+    .school-choice .last-step .school-buttons, .school-choice .last-step .signature-buttons,
+    .signature-choice .last-step .school-buttons,
+    .signature-choice .last-step .signature-buttons {
+      margin-top: 1em; }
+    .school-choice .last-step #school-reset, .school-choice .last-step #signature-reset,
+    .signature-choice .last-step #school-reset,
+    .signature-choice .last-step #signature-reset {
+      border-left: 1px solid #f3f7f8; }
+    .school-choice .last-step .return,
+    .signature-choice .last-step .return {
+      line-height: 1.5em;
+      height: 1.5em;
+      font-size: 1.5em;
+      width: 90%;
+      margin: 0 auto .5em;
+      border-top: 1px solid white;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0; }
+  .school-choice .school-buttons,
+  .signature-choice .school-buttons {
+    margin-top: 2em; }
+    .school-choice .school-buttons button,
+    .signature-choice .school-buttons button {
+      border: none; }
+      .school-choice .school-buttons button:hover,
+      .signature-choice .school-buttons button:hover {
+        cursor: pointer; }
 
 .signature-choice h1,
 .school-choice h1 {
@@ -647,7 +739,7 @@ input:focus, textarea:focus, button:focus {
 .school-choice .signature-buttons #school-accept,
 .school-choice .school-buttons #signature-accept,
 .school-choice .school-buttons #school-accept {
-  border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 0;
   border-left: 1px solid #373b5d; }
   .signature-choice .signature-buttons #signature-accept:hover,
   .signature-choice .signature-buttons #school-accept:hover,
@@ -667,7 +759,7 @@ input:focus, textarea:focus, button:focus {
 .school-choice .signature-buttons #school-reset,
 .school-choice .school-buttons #signature-reset,
 .school-choice .school-buttons #school-reset {
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 0 0;
   border-right: 1px solid #373b5d; }
   .signature-choice .signature-buttons #signature-reset:hover,
   .signature-choice .signature-buttons #school-reset:hover,
@@ -696,15 +788,16 @@ input:focus, textarea:focus, button:focus {
   left: 0;
   background: rgba(0, 0, 0, 0.5);
   -webkit-backdrop-filter: blur(3px) grayscale(1);
-  backdrop-filter: blur(3px) grayscale(1); }
+  backdrop-filter: blur(3px) grayscale(1);
+  z-index: 101; }
 
 .password {
   opacity: 0;
   pointer-events: none;
   position: fixed;
   top: calc(75% - 75px);
-  left: calc(50% - 200px);
-  width: 400px;
+  left: calc(50% - 175px);
+  width: 350px;
   padding: 5px;
   padding-bottom: 10px;
   text-align: center;
@@ -712,7 +805,7 @@ input:focus, textarea:focus, button:focus {
   border-radius: 3px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   border: 3px solid #373b5d;
-  z-index: 1; }
+  z-index: 102; }
   .password.is-active {
     opacity: 1;
     pointer-events: all;
@@ -725,7 +818,7 @@ input:focus, textarea:focus, button:focus {
       width: 100%;
       height: 100%; }
     .password .lock-icon.is-active {
-      animation: grow 200ms ease-in-out 500ms; }
+      animation: grow 200ms ease-in-out 550ms; }
   @media (min-width: 750px) {
     .password {
       top: calc(50% - 75px); } }
@@ -751,6 +844,7 @@ input:focus, textarea:focus, button:focus {
 
 .step-one-icon,
 .step-two-icon {
+  opacity: 0;
   height: 100px;
   width: 100px;
   margin: auto; }
@@ -760,10 +854,10 @@ input:focus, textarea:focus, button:focus {
     width: 100%; }
 
 .step-one-icon {
-  animation: grow 200ms ease-in-out 200ms; }
+  animation: show 300ms ease-in-out .6s forwards; }
 
 .step-two-icon {
-  animation: grow 200ms ease-in-out 600ms; }
+  animation: show 300ms ease-in-out 1s forwards; }
 
 svg #icon-circle {
   fill: #5b5d8e; }
@@ -792,14 +886,24 @@ svg #icons * {
   0% {
     opacity: 0;
     transform: scale(0.1); }
-  25% {
-    transform: rotateX(90deg); }
   50% {
     opacity: 1; }
   85% {
     transform: scale(1.25); }
   100% {
     transform: scale(1); } }
+@keyframes show {
+  0% {
+    transform: scale(1);
+    opacity: 0; }
+  60% {
+    transform: scale(0.9) rotate(10deg);
+    opacity: 1; }
+  90% {
+    transform: rotate(-5deg); }
+  100% {
+    transform: scale(1);
+    opacity: 1; } }
 .school-box:hover,
 .signature-box:hover {
   cursor: pointer;
@@ -818,26 +922,36 @@ svg #icons * {
     transform-origin: center;
     animation: shrink 200ms ease-in forwards; }
 
-@media (min-width: 750px) and (pointer: fine) {
-  .main-grid {
+@media (min-width: 750px) {
+  .doors {
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 50px; }
-    .main-grid .step-two-icon {
-      grid-column: 2 / 3; }
-    .main-grid .school-box,
-    .main-grid .signature-box {
-      grid-row: span 2; }
-    .main-grid .footer {
-      grid-column: span 2; }
+    grid-template-rows: calc((100vh - 150px - 2.5em) / 2);
+    height: calc(100vh - 150px - 2.5em); }
+    .doors .school-box,
+    .doors .signature-box {
+      border: none;
+      height: calc(100vh - 150px - 2.5em); }
+    .doors .school-box {
+      border-right: 1px solid #373b5d; }
+      .doors .school-box.active {
+        transform: translateX(-150%); }
+    .doors .signature-box {
+      border-left: 1px solid #373b5d; }
+      .doors .signature-box.active {
+        transform: translateX(150%); }
 
   .school-choice,
   .signature-choice {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 50px 100px 1fr 100px 100px;
-    grid-template-areas: 'header header' 'icon-one icon-two' 'step-one step-two' 'step-one accept-reset' 'return return';
+    grid-template-rows: 150px 50px 100px 1fr 200px;
+    grid-template-areas: 'spacer spacer' 'header header' 'icon-one icon-two' 'step-one step-two' '. last-step';
     grid-gap: 10px;
     align-items: start; }
+    .school-choice .spacer,
+    .signature-choice .spacer {
+      grid-area: spacer; }
     .school-choice h1,
     .signature-choice h1 {
       grid-area: header; }
@@ -857,36 +971,61 @@ svg #icons * {
     .signature-choice .signature-step-two,
     .signature-choice .school-step-two {
       grid-area: step-two; }
-    .school-choice .signature-buttons,
-    .school-choice .school-buttons,
-    .signature-choice .signature-buttons,
-    .signature-choice .school-buttons {
-      grid-area: accept-reset; }
-    .school-choice .return,
-    .signature-choice .return {
-      grid-area: return; } }
+    .school-choice .last-step,
+    .signature-choice .last-step {
+      grid-area: last-step; } }
 @media only screen and (max-device-width: 500px) and (orientation: portrait) {
   body {
     -webkit-text-size-adjust: 100%;
     font-size: 1.5em; }
 
-  .cta .book {
-    padding-left: 1em; }
+  .cta {
+    height: 200px; }
+    .cta .book {
+      padding-left: 1em; }
+      .cta .book #icon-shadow {
+        opacity: 0; }
+    .cta h1 {
+      font-size: 2.25em; }
 
-  .main-grid .school-button {
-    width: 50%; }
-  .main-grid .school-button-icon,
-  .main-grid .signature-button-icon {
-    width: 250px;
-    height: 250px; }
-  .main-grid h2 {
-    font-size: 2.5em;
-    width: 100%;
-    padding-top: 1em; }
+  .doors {
+    display: block;
+    position: fixed;
+    top: 200px;
+    left: 0;
+    right: 0;
+    height: calc(100vh - 200px - 2em);
+    z-index: 10; }
+    .doors .school-box {
+      height: calc((100vh - 200px - 2em) / 2);
+      border-bottom: 1px solid #373b5d; }
+    .doors .signature-box {
+      height: calc((100vh - 200px - 2em) / 2);
+      border-top: 1px solid #373b5d; }
+    .doors .school-button-icon,
+    .doors .signature-button-icon {
+      width: 250px;
+      height: 250px; }
+      .doors .school-button-icon #icon-circle,
+      .doors .signature-button-icon #icon-circle {
+        fill: #373b5d; }
+      .doors .school-button-icon #icon-shadow,
+      .doors .signature-button-icon #icon-shadow {
+        opacity: 0; }
+    .doors h2 {
+      font-size: 2.5em;
+      width: 100%;
+      padding-top: 1em; }
+    .doors .school-box.active {
+      transform: translateY(-150%); }
+    .doors .signature-box.active {
+      transform: translateY(150%); }
 
   .school-choice,
   .signature-choice {
-    grid-template-rows: 300px 150px 1fr 100px 1fr 100px 300px; }
+    grid-template-rows: 200px 150px 150px 100% 150px 100% 100px 300px;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'spacer' 'header' 'icon-one' 'step-one' 'icon-two' 'step-two' 'last-step'; }
     .school-choice h1,
     .signature-choice h1 {
       font-size: 4em;
@@ -897,6 +1036,16 @@ svg #icons * {
     .signature-choice .step-two-icon {
       width: 150px;
       height: 150px; }
+      .school-choice .step-one-icon #icon-circle,
+      .school-choice .step-two-icon #icon-circle,
+      .signature-choice .step-one-icon #icon-circle,
+      .signature-choice .step-two-icon #icon-circle {
+        fill: #373b5d; }
+      .school-choice .step-one-icon #icon-shadow,
+      .school-choice .step-two-icon #icon-shadow,
+      .signature-choice .step-one-icon #icon-shadow,
+      .signature-choice .step-two-icon #icon-shadow {
+        opacity: 0; }
     .school-choice .school-step-one,
     .school-choice .signature-step-one,
     .signature-choice .school-step-one,
@@ -1000,15 +1149,15 @@ svg #icons * {
         font-size: 2em;
         padding: 0;
         margin: 0; }
-    .school-choice .return,
-    .signature-choice .return {
+    .school-choice .last-step .return,
+    .signature-choice .last-step .return {
       height: 2em;
       line-height: 2em;
       font-size: 2em;
       padding: 0;
       margin: 0;
-      width: 75%;
-      margin: auto; }
+      width: 75% !important;
+      margin: 0 auto .5em; }
 
   .password {
     width: 75%;
@@ -1035,124 +1184,97 @@ svg #icons * {
         font-size: 2em;
         padding: 0;
         margin: 0; } }
-@media only screen and (max-device-width: 1400px) and (min-device-width: 501px) and (orientation: landscape) {
+@media only screen and (max-device-width: 1400px) and (min-device-width: 401px) and (orientation: landscape) {
   body {
-    -webkit-text-adjust: 100%;
     font-size: 1.5em; }
 
-  .max-width .cta h1 {
-    font-size: 2em; }
-  .max-width .cta h2 {
+  .max-width .cta {
+    height: 100px; }
+    .max-width .cta .book {
+      height: 75px;
+      width: 75px; }
+    .max-width .cta h1 {
+      font-size: 2em;
+      margin: 0; }
+    .max-width .cta h2 {
+      font-size: 1em;
+      text-align: right;
+      margin: 0; }
+
+  .footer {
+    height: 1em;
+    line-height: 1em;
     font-size: 1em; }
 
-  .main-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 100px; }
-    .main-grid .school-box,
-    .main-grid .signature-box {
-      grid-row: span 2; }
-    .main-grid .footer {
-      grid-column: span 2; }
+  .doors {
+    height: calc(100vh - 100px - 1.5em);
+    top: 100px;
+    grid-template-rows: 100%; }
+    .doors .school-box,
+    .doors .signature-box {
+      height: 100%; }
 
-  .school-choice,
-  .signature-choice {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 100px 100px 1fr 50px 100px; }
-    .school-choice h1,
-    .signature-choice h1 {
-      grid-column: span 2; }
-    .school-choice .school-step-one,
-    .school-choice .signature-step-one,
-    .signature-choice .school-step-one,
-    .signature-choice .signature-step-one {
-      grid-column: 1 / 2;
-      grid-row: 3 / 4; }
-      .school-choice .school-step-one #page-count,
-      .school-choice .school-step-one #quantity-signature,
-      .school-choice .signature-step-one #page-count,
-      .school-choice .signature-step-one #quantity-signature,
-      .signature-choice .school-step-one #page-count,
-      .signature-choice .school-step-one #quantity-signature,
-      .signature-choice .signature-step-one #page-count,
-      .signature-choice .signature-step-one #quantity-signature {
-        width: 80%;
-        text-align: center;
-        line-height: 1em;
-        font-size: 1em;
-        padding: 0;
-        margin: 0;
-        height: 1em; }
-    .school-choice #school-quantity,
-    .school-choice #quote-signature,
-    .school-choice #price-set,
-    .signature-choice #school-quantity,
-    .signature-choice #quote-signature,
-    .signature-choice #price-set {
-      width: calc(80% - 100px);
-      text-align: center;
-      line-height: 1em;
+  .school-choice .spacer,
+  .signature-choice .spacer {
+    height: 100px; }
+  .school-choice .school-step-one #page-count,
+  .school-choice .school-step-one #quantity-signature,
+  .school-choice .signature-step-one #page-count,
+  .school-choice .signature-step-one #quantity-signature,
+  .signature-choice .school-step-one #page-count,
+  .signature-choice .school-step-one #quantity-signature,
+  .signature-choice .signature-step-one #page-count,
+  .signature-choice .signature-step-one #quantity-signature {
+    width: 80%;
+    text-align: center;
+    line-height: 1em;
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+    height: 1em; }
+  .school-choice #school-quantity,
+  .school-choice #quote-signature,
+  .school-choice #price-set,
+  .signature-choice #school-quantity,
+  .signature-choice #quote-signature,
+  .signature-choice #price-set {
+    width: calc(80% - 100px);
+    text-align: center;
+    line-height: 1em;
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+    height: 1em; }
+  .school-choice #school-submit,
+  .school-choice #signature-submit,
+  .school-choice #signature-price,
+  .signature-choice #school-submit,
+  .signature-choice #signature-submit,
+  .signature-choice #signature-price {
+    width: 100px;
+    line-height: 1em;
+    font-size: 1em;
+    padding: 0;
+    margin: 0; }
+  .school-choice .school-date-choice,
+  .signature-choice .school-date-choice {
+    display: flex;
+    flex-direction: column; }
+    .school-choice .school-date-choice label,
+    .signature-choice .school-date-choice label {
       font-size: 1em;
-      padding: 0;
-      margin: 0;
-      height: 1em; }
-    .school-choice #school-submit,
-    .school-choice #signature-submit,
-    .school-choice #signature-price,
-    .signature-choice #school-submit,
-    .signature-choice #signature-submit,
-    .signature-choice #signature-price {
-      width: 100px;
-      line-height: 1em;
+      padding: .125em 0 .25em 0; }
+    .school-choice .school-date-choice select,
+    .signature-choice .school-date-choice select {
       font-size: 1em;
-      padding: 0;
-      margin: 0; }
-    .school-choice .school-date-choice,
-    .signature-choice .school-date-choice {
-      display: flex;
-      flex-direction: column; }
-      .school-choice .school-date-choice label,
-      .signature-choice .school-date-choice label {
-        font-size: 1em;
-        padding: .125em 0 .25em 0; }
-      .school-choice .school-date-choice select,
-      .signature-choice .school-date-choice select {
-        font-size: 1em;
-        background: white;
-        padding: .125em;
-        width: 75%;
-        text-align: center;
-        margin: 0 auto; }
-      .school-choice .school-date-choice #year,
-      .signature-choice .school-date-choice #year {
-        margin-bottom: .75em; }
-    .school-choice .school-buttons,
-    .school-choice .signature-buttons,
-    .signature-choice .school-buttons,
-    .signature-choice .signature-buttons {
-      grid-column: span 2;
-      grid-row: 4 / 5;
+      background: white;
+      padding: .125em;
       width: 75%;
+      text-align: center;
       margin: 0 auto; }
-      .school-choice .school-buttons #school-accept, .school-choice .school-buttons #school-reset,
-      .school-choice .school-buttons #signature-accept, .school-choice .school-buttons #signature-reset,
-      .school-choice .signature-buttons #school-accept,
-      .school-choice .signature-buttons #school-reset,
-      .school-choice .signature-buttons #signature-accept,
-      .school-choice .signature-buttons #signature-reset,
-      .signature-choice .school-buttons #school-accept,
-      .signature-choice .school-buttons #school-reset,
-      .signature-choice .school-buttons #signature-accept,
-      .signature-choice .school-buttons #signature-reset,
-      .signature-choice .signature-buttons #school-accept,
-      .signature-choice .signature-buttons #school-reset,
-      .signature-choice .signature-buttons #signature-accept,
-      .signature-choice .signature-buttons #signature-reset {
-        width: 50%; }
-    .school-choice .return,
-    .signature-choice .return {
-      grid-column: span 2;
-      grid-row: 5 / 6;
-      width: 75%; }
+    .school-choice .school-date-choice #year,
+    .signature-choice .school-date-choice #year {
+      margin-bottom: .75em; }
 
   .password h2 {
     font-size: 1em; }

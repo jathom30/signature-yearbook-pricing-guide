@@ -1,5 +1,6 @@
 .step-one-icon,
 .step-two-icon {
+  opacity: 0;
   height: 100px;
   width: 100px;
   margin: auto;
@@ -7,13 +8,12 @@
     height: 100%;
     width: 100%;
   }
-  
 }
 
 .step-one-icon {
-  animation: grow 200ms ease-in-out 200ms;
+  animation: show 300ms ease-in-out .6s forwards;
 }
 
 .step-two-icon {
-  animation: grow 200ms ease-in-out 600ms;
+  animation: show 300ms ease-in-out 1s forwards;
 }

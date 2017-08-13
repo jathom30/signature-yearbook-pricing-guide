@@ -1,9 +1,10 @@
 .school-choice, 
 .signature-choice {
+  transition: all 300ms ease-out;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px 100px 1fr 100px 1fr 50px 100px;
-  grid-gap: 10px;
+  grid-template-rows: 150px 50px 100px 100% 100px 100% 200px;
+//  grid-gap: 10px;
 //  height: 75vh;
   text-align: center;
   justify-content: center;
@@ -12,21 +13,83 @@
   max-width: 1000px;
   margin: auto;
   
+  .spacer {
+    height: 150px;
+    width: 100vw;
+    background-color: $dark-blue;
+    cursor: pointer;
+  }
+  
   .school-step-one,
   .signature-step-one {
 //    background: pink;
     align-self: start;
-    
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0,0,0,.2);
+    width: 95%;
+    margin: .5em auto 2em;
   }
   .school-step-two,
   .signature-step-two {
     align-self: start;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0,0,0,.2);
+    width: 95%;
+    margin: .5em auto 2em;
     
     .school-date-choice {
       
     }
   }
+  
+  .last-step {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 0 auto;
+    background: white;
+    border-radius: 5px;
+    justify-content: center;
+    margin-bottom: 2em;
+    box-shadow: 0 5px 5px rgba(0,0,0,.2);
+    
+    #school-accept,
+    #school-reset,
+    #signature-accept,
+    #signature-reset{
+      line-height: 1.5em;
+      height: 1.5em;
+      font-size: 1.5em;
+      padding: 0;
+      margin: 0;
+      width: 45%;
+    }
+    
+    .school-buttons, .signature-buttons {
+      margin-top: 1em;
+    }
+    
+    #school-reset, #signature-reset {
+      border-left: 1px solid $background;
+    }
+    
+    .return {
+      line-height: 1.5em;
+      height: 1.5em;
+      font-size: 1.5em;
+      width: 90%;
+      margin: 0 auto .5em;
+      border-top: 1px solid white;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+    
+  }
+  
   .school-buttons {
+    margin-top: 2em;
     button {
       border: none;
       &:hover {

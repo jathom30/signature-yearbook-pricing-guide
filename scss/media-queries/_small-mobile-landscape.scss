@@ -1,52 +1,52 @@
-@media only screen and (max-device-width: 1400px) and (min-device-width: 501px) and (orientation: landscape) {
+@media only screen and (max-device-width: 1400px) and (min-device-width: 401px) and (orientation: landscape) {
   body {
-    -webkit-text-adjust: 100%;
     font-size: 1.5em;
   }
   
   .max-width {
 //    height: 100px;
     .cta {
+      height: 100px;
+      .book {
+        height: 75px;
+        width: 75px;
+      }
       h1 {
         font-size: 2em;
+        margin: 0;
       }
       h2 {
         font-size: 1em;
+        text-align: right;
+        margin: 0;
       }
     }
   }
-  
-  .main-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 100px;
-    
-    .school-box,
-    .signature-box {
-      grid-row: span 2;
-    }
-    
-    .footer {
-      grid-column: span 2;
-    }
-    
+  .footer {
+    height: 1em;
+    line-height: 1em;
+    font-size: 1em;
   }
   
+  .doors {
+    height: calc(100vh - 100px - 1.5em);
+    top: 100px;
+    grid-template-rows: 100%;
+    .school-box,
+    .signature-box {
+      height: 100%;
+    }
+  }
   
   //school and signature sections
   .school-choice,
   .signature-choice {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 100px 100px 1fr 50px 100px;
-    
-    h1 {
-      grid-column: span 2;
+    .spacer {
+      height: 100px;
     }
-    
+
     .school-step-one,
     .signature-step-one {
-      grid-column: 1 / 2;
-      grid-row: 3 / 4;
-      
       #page-count,
       #quantity-signature {
         width: 80%;
@@ -57,9 +57,6 @@
         margin: 0;
         height: 1em;
       }
-      
-      
-      
     }
     
     #school-quantity,
@@ -105,25 +102,25 @@
     }
 
   }
-
-    .school-buttons,
-    .signature-buttons {
-      grid-column: span 2;
-      grid-row: 4 / 5;
-      width: 75%;
-      margin: 0 auto;
-      
-      #school-accept, #school-reset,
-      #signature-accept, #signature-reset {
-        width: 50%;
-      }
-    }
-    
-    .return {
-      grid-column: span 2;
-      grid-row: 5 / 6;
-      width: 75%;
-    }
+//
+//    .school-buttons,
+//    .signature-buttons {
+//      grid-column: span 2;
+//      grid-row: 4 / 5;
+//      width: 75%;
+//      margin: 0 auto;
+//      
+//      #school-accept, #school-reset,
+//      #signature-accept, #signature-reset {
+//        width: 50%;
+//      }
+//    }
+//    
+//    .return {
+//      grid-column: span 2;
+//      grid-row: 5 / 6;
+//      width: 75%;
+//    }
     
   }
   

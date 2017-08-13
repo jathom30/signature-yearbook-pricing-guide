@@ -4,28 +4,34 @@
 }
 
 body {
-  background: $shadow;
+  background: $background;
 }
 
 input:focus, textarea:focus, button:focus {
     outline: none;
 }
 
-.main-grid {
-  display: grid;
-  grid-template-rows: 1fr 1fr 50px;
-  height: 75vh;
-  align-items: center;
-  max-width: 1000px;
-  margin: auto;
-  background: $background;
+.top-and-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  pointer-events: none;
 }
 
+
+
 .max-width {
-  background: url(../img/tattered-edges-of-book-pages.jpg) no-repeat center;
+//  background: url(../img/tattered-edges-of-book-pages.jpg) no-repeat center;
+  background-color: $dark-blue;
   background-size: cover;
-  max-width: 1000px;
-  margin: auto;
+//  max-width: 1000px;
+//  margin: 0 auto;
+  
 }
 
 .cta {
@@ -33,9 +39,8 @@ input:focus, textarea:focus, button:focus {
   flex-direction: column;
   align-content: center;
   justify-content: center;
-  height: 25vh;
-  min-height: 150px;
   max-width: 1000px;
+  height: 150px;
   margin: auto;
   
   .book {
@@ -53,7 +58,7 @@ input:focus, textarea:focus, button:focus {
   
   h1 {
     color: $background;
-    text-shadow: 0 5px 5px rgba(0,0,0,1);
+//    text-shadow: 0 5px 5px rgba(0,0,0,1);
     text-align: center;
     margin: 0 auto;
     text-transform: uppercase;
@@ -65,7 +70,7 @@ input:focus, textarea:focus, button:focus {
   }
   h2 {
     color: $background;
-    text-shadow: 0 5px 5px rgba(0,0,0,1);
+//    text-shadow: 0 5px 5px rgba(0,0,0,1);
     text-align: center;
     align-self: start;
     margin: 0 auto;
@@ -92,6 +97,24 @@ input:focus, textarea:focus, button:focus {
     
   }
   
+}
+
+.doors {
+  position: fixed;
+  top: 150px;
+  left: 0;
+  right: 0;
+  height: calc(100vh - 150px - 2.5em);
+  z-index: 10;
+  
+  .school-box {
+    height: 50%;
+    border-bottom: 1px solid $dark-blue;
+  }
+  .signature-box {
+    height: 50%;
+    border-top: 1px solid $dark-blue;
+  }
 }
 
 .school-box,
@@ -129,14 +152,34 @@ input:focus, textarea:focus, button:focus {
 }
 
 
+.school-box,
+.signature-box {
+  overflow: hidden;
+  transition: transform .5s ease-in-out;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: $background;
+}
 
+.school-box.active {
+  transform: translateY(-150%);
+}
+
+.signature-box.active {
+  transform: translateY(150%);
+}
 
 
 
 
 
 .footer {
+  height: 2em;
+  line-height: 2em;
+  background: $dark-blue;
+  color: $background;
   text-align: center;
-  padding: 10px 0;
+  padding: .25em 0;
 }
 
