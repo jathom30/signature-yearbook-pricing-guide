@@ -30,7 +30,7 @@
     width: 95%;
     margin: .5em auto 2em;
     transform: translateX(-250%);
-    transition: transform 300ms ease-in-out 500ms;
+    transition: transform 300ms cubic-bezier(0.57, 0.01, 0.4, 1.25) 500ms;
     &.slide {
       transform: translate(0,0);
     }
@@ -44,7 +44,7 @@
     width: 95%;
     margin: .5em auto 2em;
     transform: translateX(250%);
-    transition: transform 300ms ease-in-out 1000ms;
+    transition: transform 300ms cubic-bezier(0.57, 0.01, 0.4, 1.25) 1000ms;
     &.slide {
       transform: translate(0,0);
     }
@@ -65,7 +65,7 @@
     margin-bottom: 2em;
     box-shadow: 0 5px 5px rgba(0,0,0,.2);
     transform: translateY(500%);
-    transition: transform 300ms ease-in-out 1500ms;
+    transition: transform 300ms cubic-bezier(0.57, 0.01, 0.4, 1.25) 1500ms;
     &.slide {
       transform: translate(0,0);
     }
