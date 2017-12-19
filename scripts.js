@@ -4,7 +4,7 @@ const $schoolChoice = $('.school-choice');
 const $banner = $('.max-width');
 const $signatureButton = $('.signature-box');
 const $schoolButton = $('.school-box');
-const correctPassword = 'signature';
+const correctPassword = 'arnold4121';
 const $overlay = $('.overlay');
 const $doors = $('.doors');
 
