@@ -538,8 +538,8 @@ input:focus, textarea:focus, button:focus {
 .signature-choice {
   transition: all 300ms ease-out;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 150px auto 100px auto 100px auto 200px;
+  grid-template-columns: 100vw;
+  grid-template-rows: 150px 50px 100px auto 100px auto 100px 100px;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -560,7 +560,7 @@ input:focus, textarea:focus, button:focus {
     background: white;
     border-radius: 5px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-    width: 95%;
+    width: 95vw;
     margin: .5em auto 2em;
     transform: translateX(-250%);
     transition: transform 300ms cubic-bezier(0.57, 0.01, 0.4, 1.25) 500ms; }
@@ -595,7 +595,7 @@ input:focus, textarea:focus, button:focus {
   .signature-choice .last-step {
     display: flex;
     flex-direction: column;
-    width: 95%;
+    width: 95vw;
     margin: 0 auto;
     background: white;
     border-radius: 5px;
@@ -946,7 +946,7 @@ svg #icons {
     transform-origin: center;
     animation: shrink 200ms ease-in forwards; }
 
-@media (min-width: 750px) {
+@media screen and (min-width: 750px) {
   .doors {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -986,7 +986,8 @@ svg #icons {
     .school-choice .school-step-one,
     .signature-choice .signature-step-one,
     .signature-choice .school-step-one {
-      grid-area: step-one; }
+      grid-area: step-one;
+      width: 95%; }
     .school-choice .step-two-icon,
     .signature-choice .step-two-icon {
       grid-area: icon-two; }
@@ -998,7 +999,8 @@ svg #icons {
       max-width: 95%; }
     .school-choice .last-step,
     .signature-choice .last-step {
-      grid-area: last-step; } }
+      grid-area: last-step;
+      width: 100%; } }
 @media only screen and (max-width: 500px) and (orientation: portrait) {
   .school-choice,
   .signature-choice {

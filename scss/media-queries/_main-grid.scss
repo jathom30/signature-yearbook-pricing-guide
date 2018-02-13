@@ -1,4 +1,4 @@
-@media (min-width:$large) {
+@media screen and (min-width:$large) {
   .doors {
     display: grid;
 //    background: pink;
@@ -54,6 +54,7 @@
     .signature-step-one,
     .school-step-one {
       grid-area: step-one;
+      width: 95%;
     }
     
     .step-two-icon {
@@ -68,6 +69,7 @@
     
     .last-step {
       grid-area: last-step;
+      width: 100%;
     }
 //    .signature-buttons,
 //    .school-buttons {
