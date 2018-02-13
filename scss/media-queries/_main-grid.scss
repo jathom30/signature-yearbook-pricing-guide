@@ -28,7 +28,7 @@
   .signature-choice {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 150px 50px 100px 1fr 200px;
+    grid-template-rows: 150px auto 100px 1fr auto;
     grid-template-areas:
       'spacer spacer spacer spacer'
       'header header header header'
@@ -63,6 +63,7 @@
     .signature-step-two,
     .school-step-two {
       grid-area: step-two;
+      max-width: 95%;
     }
     
     .last-step {

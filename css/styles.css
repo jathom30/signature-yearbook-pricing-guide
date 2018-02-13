@@ -539,7 +539,7 @@ input:focus, textarea:focus, button:focus {
   transition: all 300ms ease-out;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 150px 50px 100px 100% 100px 100% 200px;
+  grid-template-rows: 150px auto 100px auto 100px auto 200px;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -577,7 +577,7 @@ input:focus, textarea:focus, button:focus {
     background: white;
     border-radius: 5px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-    width: 95%;
+    width: 95vw;
     margin: .5em auto 2em;
     transform: translateX(250%);
     transition: transform 300ms cubic-bezier(0.57, 0.01, 0.4, 1.25) 1000ms; }
@@ -586,6 +586,11 @@ input:focus, textarea:focus, button:focus {
     .signature-choice .school-step-two.slide,
     .signature-choice .signature-step-two.slide {
       transform: translate(0, 0); }
+    .school-choice .school-step-two .things-to-get,
+    .school-choice .signature-step-two .things-to-get,
+    .signature-choice .school-step-two .things-to-get,
+    .signature-choice .signature-step-two .things-to-get {
+      margin: 1em; }
   .school-choice .last-step,
   .signature-choice .last-step {
     display: flex;
@@ -882,7 +887,7 @@ svg #icon-circle {
   fill: #5b5d8e; }
 svg #icon-shadow {
   fill: #373b5d; }
-svg #icons * {
+svg #icons {
   fill: #eaf1f4; }
 
 @keyframes grow {
@@ -964,7 +969,7 @@ svg #icons * {
   .signature-choice {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 150px 50px 100px 1fr 200px;
+    grid-template-rows: 150px auto 100px 1fr auto;
     grid-template-areas: 'spacer spacer spacer spacer' 'header header header header' 'icon-one icon-one icon-two icon-two' 'step-one step-one step-two step-two' '. last-step last-step .';
     grid-gap: 10px;
     align-items: start; }
@@ -989,229 +994,17 @@ svg #icons * {
     .school-choice .school-step-two,
     .signature-choice .signature-step-two,
     .signature-choice .school-step-two {
-      grid-area: step-two; }
+      grid-area: step-two;
+      max-width: 95%; }
     .school-choice .last-step,
     .signature-choice .last-step {
       grid-area: last-step; } }
-@media only screen and (max-device-width: 500px) and (orientation: portrait) {
-  body {
-    -webkit-text-size-adjust: 100%;
-    font-size: 1.5em; }
-
-  .cta {
-    height: 200px; }
-    .cta .book {
-      padding-left: 1em; }
-      .cta .book #icon-shadow {
-        opacity: 0; }
-    .cta h1 {
-      font-size: 2.25em; }
-
-  .doors {
-    display: block;
-    position: fixed;
-    top: 200px;
-    left: 0;
-    right: 0;
-    height: calc(100vh - 200px - 2em);
-    z-index: 10; }
-    .doors .school-box {
-      height: calc((100vh - 200px - 2em) / 2);
-      border-bottom: 1px solid #373b5d; }
-    .doors .signature-box {
-      height: calc((100vh - 200px - 2em) / 2);
-      border-top: 1px solid #373b5d; }
-    .doors .school-button-icon,
-    .doors .signature-button-icon {
-      width: 250px;
-      height: 250px; }
-      .doors .school-button-icon #icon-circle,
-      .doors .signature-button-icon #icon-circle {
-        fill: #373b5d; }
-      .doors .school-button-icon #icon-shadow,
-      .doors .signature-button-icon #icon-shadow {
-        opacity: 0; }
-    .doors h2 {
-      font-size: 2.5em;
-      width: 100%;
-      padding-top: 1em; }
-    .doors .school-box.active {
-      transform: translateY(-150%); }
-    .doors .signature-box.active {
-      transform: translateY(150%); }
-
+@media only screen and (max-width: 500px) and (orientation: portrait) {
   .school-choice,
   .signature-choice {
-    grid-template-rows: 200px 150px 150px 100% 150px 100% 100px 300px;
-    grid-template-columns: 1fr;
-    grid-template-areas: 'spacer' 'header' 'icon-one' 'step-one' 'icon-two' 'step-two' 'last-step'; }
-    .school-choice h1,
-    .signature-choice h1 {
-      font-size: 4em;
-      width: 50%; }
-    .school-choice .step-one-icon,
-    .school-choice .step-two-icon,
-    .signature-choice .step-one-icon,
-    .signature-choice .step-two-icon {
-      width: 150px;
-      height: 150px; }
-      .school-choice .step-one-icon #icon-circle,
-      .school-choice .step-two-icon #icon-circle,
-      .signature-choice .step-one-icon #icon-circle,
-      .signature-choice .step-two-icon #icon-circle {
-        fill: #373b5d; }
-      .school-choice .step-one-icon #icon-shadow,
-      .school-choice .step-two-icon #icon-shadow,
-      .signature-choice .step-one-icon #icon-shadow,
-      .signature-choice .step-two-icon #icon-shadow {
-        opacity: 0; }
-    .school-choice .school-step-one,
-    .school-choice .signature-step-one,
-    .signature-choice .school-step-one,
-    .signature-choice .signature-step-one {
-      margin-bottom: 200px;
-      transform: none; }
-    .school-choice .school-step-one,
-    .school-choice .signature-step-one,
-    .signature-choice .school-step-one,
-    .signature-choice .signature-step-one {
-      transform: none; }
-    .school-choice h3,
-    .signature-choice h3 {
-      font-size: 2.5em; }
-    .school-choice p,
-    .signature-choice p {
-      font-size: 2em; }
-    .school-choice input,
-    .signature-choice input {
-      height: 2em;
-      font-size: 2em;
-      text-align: center;
-      line-height: 2em;
-      padding: 0;
-      margin: 0; }
-    .school-choice #page-count,
-    .school-choice #quantity-signature,
-    .signature-choice #page-count,
-    .signature-choice #quantity-signature {
-      width: 75%; }
-    .school-choice .school-quantity-requested,
-    .signature-choice .school-quantity-requested {
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-    .school-choice #school-quantity,
-    .school-choice #quote-signature,
-    .school-choice #price-set,
-    .signature-choice #school-quantity,
-    .signature-choice #quote-signature,
-    .signature-choice #price-set {
-      width: calc(75% - 300px);
-      height: 2em;
-      line-height: 2em;
-      font-size: 2em;
-      padding: 0;
-      margin: 0; }
-    .school-choice #school-submit,
-    .school-choice #signature-submit,
-    .school-choice #signature-price,
-    .signature-choice #school-submit,
-    .signature-choice #signature-submit,
-    .signature-choice #signature-price {
-      width: 300px;
-      line-height: 2em;
-      font-size: 2em;
-      padding: 0;
-      margin: 0; }
-    .school-choice .school-date-choice,
-    .signature-choice .school-date-choice {
-      display: flex;
-      flex-direction: column; }
-      .school-choice .school-date-choice label,
-      .signature-choice .school-date-choice label {
-        font-size: 2em;
-        padding: .25em 0 .5em 0; }
-      .school-choice .school-date-choice select,
-      .signature-choice .school-date-choice select {
-        font-size: 2em;
-        background: white;
-        padding: .25em;
-        width: 75%;
-        text-align: center;
-        margin: 0 auto; }
-      .school-choice .school-date-choice #year,
-      .signature-choice .school-date-choice #year {
-        margin-bottom: 1.5em; }
-    .school-choice #school-date-submit,
-    .signature-choice #school-date-submit {
-      width: 75%;
-      height: 2em;
-      font-size: 2em;
-      line-height: 2em; }
-    .school-choice .school-buttons,
-    .school-choice .signature-buttons,
-    .signature-choice .school-buttons,
-    .signature-choice .signature-buttons {
-      width: 75%;
-      margin: 2em auto .5em; }
-      .school-choice .school-buttons #school-accept, .school-choice .school-buttons #school-reset,
-      .school-choice .school-buttons #signature-accept, .school-choice .school-buttons #signature-reset,
-      .school-choice .signature-buttons #school-accept,
-      .school-choice .signature-buttons #school-reset,
-      .school-choice .signature-buttons #signature-accept,
-      .school-choice .signature-buttons #signature-reset,
-      .signature-choice .school-buttons #school-accept,
-      .signature-choice .school-buttons #school-reset,
-      .signature-choice .school-buttons #signature-accept,
-      .signature-choice .school-buttons #signature-reset,
-      .signature-choice .signature-buttons #school-accept,
-      .signature-choice .signature-buttons #school-reset,
-      .signature-choice .signature-buttons #signature-accept,
-      .signature-choice .signature-buttons #signature-reset {
-        width: 50%;
-        height: 2em;
-        line-height: 2em;
-        font-size: 2em;
-        padding: 0;
-        margin: 0; }
-    .school-choice .last-step,
-    .signature-choice .last-step {
-      transform: none; }
-      .school-choice .last-step .return,
-      .signature-choice .last-step .return {
-        height: 2em;
-        line-height: 2em;
-        font-size: 2em;
-        padding: 0;
-        margin: 0;
-        width: 75% !important;
-        margin: 0 auto .5em; }
-
-  .password {
-    width: 75%;
-    left: calc(25% / 2); }
-    .password .lock-icon {
-      width: 300px;
-      height: 300px;
-      padding: 1em 0; }
-    .password h2 {
-      font-size: 2em; }
-    .password .password-inputs {
-      margin-bottom: 1em; }
-      .password .password-inputs #password {
-        height: 2em;
-        line-height: 2em;
-        font-size: 2em;
-        padding: 0;
-        margin: 0;
-        width: calc(90% - 250px);
-        padding-left: .5em; }
-      .password .password-inputs #signature-password-button {
-        width: 250px;
-        line-height: 2em;
-        font-size: 2em;
-        padding: 0;
-        margin: 0; } }
+    grid-template-rows: 200px 150px 150px auto 150px auto 100px, 100px;
+    grid-template-columns: 100vw;
+    grid-template-areas: 'spacer' 'header' 'icon-one' 'step-one' 'icon-two' 'step-two' 'last-step'; } }
 @media only screen and (max-device-width: 1400px) and (min-device-width: 401px) and (orientation: landscape) {
   body {
     font-size: 1.5em; }
@@ -1266,9 +1059,9 @@ svg #icons * {
       margin: 0;
       height: 1em; }
   .school-choice .school-step-two,
-  .school-choice signature-step-two,
+  .school-choice .signature-step-two,
   .signature-choice .school-step-two,
-  .signature-choice signature-step-two {
+  .signature-choice .signature-step-two {
     transform: none; }
   .school-choice .last-step,
   .signature-choice .last-step {

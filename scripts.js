@@ -199,7 +199,6 @@ $schoolSubmit.click(function() {
 
 //Reset Button
 $('#school-reset').click(function() {
-  console.log('clicked');
   $pageCount.val('');
   $schoolQuantity.val('');
   $schoolQuote.html('<p>Price quote range (per book):</p>');
